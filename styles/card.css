@@ -1,0 +1,52 @@
+.card {
+    background-color: var(--color-ligth);
+    box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
+
+    display: flex !important;
+    flex: 1;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+.card-image {
+
+}
+
+.card_badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--color-ligth);
+    color: var(--color-accent);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-size: var(--fs-xs);
+    font-weight: 300;
+}
+
+.card-content {
+    margin: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-content-title {
+    --line-height: 1.4;
+
+    line-height: var(--line-height);
+    min-height: calc(2em * var(--line-height));
+}
+
+.card-content-descriptions {
+    font-weight: 300;
+}
+
+.card-content-link {
+    color: var(--color-red);
+    text-decoration: underline;
+    flex-grow: 1;
+    align-content: flex-end;
+}

@@ -1,0 +1,54 @@
+:root {
+
+    /* Цвета */
+
+    --color-ligth: #FFFFFF;
+    --color-dark: #464646;
+
+    --color-gray: #B7B7B7;
+    --color-red: #FD654E;
+    --color-beige: #F3F1EB;
+
+    --color-accent: #16181D;
+    --color-accent-hover: #2E2525;
+    --color-accent-pressed: #5E5959;
+
+    --color-red-hover: #D5503C;
+    --color-red-pressed: #EE5D46;
+
+    --color-dark-rgb: 0, 0, 0;
+
+    /*  Бордер  */
+
+    --border-radius: 6px;
+
+    /*  Шрифты  */
+
+    --fm-base: 'HelveticaNeue', sans-serif;
+    --fm-title: 'NunitoSans', sans-serif;
+
+    --fs-xs: 14px;
+    --fs-sm: 16px;
+    --fs-sm-max: 18px;
+    --fs-md: 20px;
+    --fs-md-max: 24px;
+    --fs-xl: 32px;
+    --fs-lg: 48px;
+
+    /* Контейнер */
+
+    --container-width: 1290px;
+    --container-padding-x: 15px;
+
+    /* Анмация */
+
+    --transition-duration: 0.2s;
+
+    /*  Брейкпоинты  */
+
+    --breakpoint-xl: 1536px;
+    --breakpoint-lg: 1224px;
+    --breakpoint-md: 900px;
+    --breakpoint-sm: 600px;
+
+}

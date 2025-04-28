@@ -1,0 +1,403 @@
+/* Нормализация */
+
+@import url("./styles/normalize.css");
+
+/* Шрифты */
+
+@import url("./styles/fonts.css");
+
+/* Переменные */
+
+@import url("./styles/variables.css");
+
+/* Карточка */
+
+@import url("./styles/card.css");
+
+/* Body */
+
+body {
+    font-family: var(--fm-base);
+    line-height: 1.4;
+    font-weight: 300;
+
+    color: var(--color-dark);
+    background-color: var(--color-ligth);
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    font-size: var(--fs-xs);
+
+    @media (min-width: 600px) {
+        font-size: var(--fs-sm);
+    };
+
+    @media (min-width: 900px) {
+        font-size: var(--fs-md);
+    };
+}
+
+/* Контейнер */
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовки */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fm-title);
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+h1 {
+    font-size: calc(var(--fs-lg) / 2);
+
+    @media (min-width: 600px) {
+        font-size: calc(var(--fs-lg) / 1.5);
+    };
+
+    @media (min-width: 900px) {
+        font-size: calc(var(--fs-lg) / 1.2);
+    };
+
+    @media (min-width: 1224px) {
+        font-size: var(--fs-lg);
+    }
+}
+
+h2 {
+    font-size: var(--fs-sm-max);
+
+    @media (min-width: 600px) {
+        font-size: var(--fs-md-max);
+    };
+
+    @media (min-width: 900px) {
+        font-size: var(--fs-xl);
+    };
+}
+
+/* Ссылки */
+
+a {
+    text-decoration: none;
+    color: var(--color-dark)
+}
+
+/* Кнопки */
+
+button {
+    border: 0;
+}
+
+.button {
+    font-family: var(--fm-title);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--color-ligth);
+    border-radius: var(--border-radius);
+    padding: 16px 36px;
+}
+
+.button.primary {
+    background-color: var(--color-red);
+}
+
+.button.secondary {
+    background-color: var(--color-accent);
+}
+
+.button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.button:active {
+    background-color: var(--color-accent-pressed);
+}
+
+.icon-square-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background-color: var(--color-beige);
+    color: #393A3A
+}
+
+.icon-square-button img {
+    width: 28.8px;
+    height: 22.4px;
+}
+
+/* Стартовая секция */
+
+.start_page {
+    width: 100%;
+    background: url("./images/header-background.jpg") no-repeat 0% 85%;
+    background-size: 141%;
+
+    @media (max-width: 1140px) {
+        background-size: cover;
+        background-position: center center;
+    };
+}
+
+/* Шапка */
+
+.header {
+    background-color: rgba(var(--color-dark-rgb), 0.7);
+    width: 100%;
+    display: flex;
+    position: fixed;
+    column-gap: 53px;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-menu {
+    margin: 16px 0;
+}
+
+.header-menu-list {
+    display: flex;
+    align-items: center;
+    column-gap: 53px;
+
+    font-size: var(--fs-sm);
+
+    list-style-type: none;
+}
+
+.header-menu-item {
+    display: flex;
+}
+
+.header-menu-logo {
+    margin: 1px 0;
+    min-width: 76px;
+    min-height: 34px;
+}
+
+.header-menu-link {
+    color: var(--color-ligth);
+    transition-duration: var(--transition-duration);
+}
+
+.header-menu-link:hover {
+    color: var(--color-red-hover)
+}
+
+.header-menu-link:active {
+    color: var(--color-red-pressed)
+}
+
+/* Топ контент */
+
+.top_content {
+    padding-top: calc(81px + 68px);
+    padding-bottom: 81px;
+}
+
+.top_content-title {
+    color: var(--color-ligth);
+    margin-bottom: 16px;
+
+    @media (min-width: 600px) {
+        margin-bottom: 22px;
+    };
+
+    @media (min-width: 900px) {
+        margin-bottom: 28px;
+    };
+}
+
+.top_content-subtitle {
+    color: var(--color-ligth);
+}
+
+.top_content-button {
+    margin: 46px 0;
+
+    @media (max-width: 600px) {
+        margin: 42px 0;
+    };
+
+    @media (max-width: 900px) {
+        margin-bottom: 44px;
+    };
+}
+
+.top_content-button.top {
+    display: block;
+
+    @media (max-width: 600px) {
+        display: none;
+    };
+}
+
+.top_content-button.bottom {
+    display: none;
+
+    @media (max-width: 600px) {
+        display: block;
+    };
+}
+
+.top_content-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+
+    @media (min-width: 600px) {
+        gap: calc(42px / 1.5);
+        flex-direction: row;
+        margin-top: 0;
+    };
+
+    @media (min-width: 900px) {
+        gap: 42px;
+        flex-direction: row;
+    };
+}
+
+.top_content-suggestion {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @media (min-width: 600px) {
+        gap: 10px;
+    };
+
+    @media (min-width: 900px) {
+        gap: 20px;
+    };
+}
+
+.top_content-suggestion-title, .top_content-suggestion-description {
+    color: var(--color-ligth);
+}
+
+.top_content-suggestion-title {
+
+}
+
+.top_content-suggestion-description {
+
+}
+
+/* Контент */
+
+.content {
+}
+
+.content-section {
+    margin-bottom: 80px;
+}
+
+.content-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-section-title-next {
+
+}
+
+.content-section-subtitle {
+    margin-bottom: 28px;
+}
+
+.content-section-carousel {
+
+}
+
+/* Авторские туры */
+
+.author_tours {
+
+}
+
+.author_tours-title {
+
+}
+
+.author_tours-subtitle {
+
+}
+
+.author_tours-carousel {
+}
+
+.author_tours-carousel .swiper-wrapper {
+    display: flex;
+}
+
+.author_tours-card {
+    height: 760px;
+    display: block;
+}
+
+.author_tours-card-image {
+    width: 410px;
+    height: 493px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.author_tours-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.73);
+    transform-origin: 63% 37%;
+    display: block;
+}
+
+.author_tours-descriptions {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.author_tours-suggestions {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*padding: 31px 36px;*/
+
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 31px 36px;
+    align-items: center;
+}
+
+.author_tours-suggestions h2 {
+    grid-column: 1 / span 7;
+    margin: 0;
+}
+
+.author_tours-suggestions button {
+    grid-column: 10 / span 3;
+    width: 100%;
+}

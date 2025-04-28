@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fly list</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/swiper.css">
+</head>
+<body class="light-theme">
+
+<section class="start_page">
+
+    <!--  Шапка  -->
+
+    <header class="header">
+
+        <!-- Навигация -->
+        <section class="container">
+            <nav class="header-menu">
+                <ul class="header-menu-list">
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-item_link">
+                            <img src="./images/logo/logo@x1.png"
+                                 srcset="./images/logo/logo@x1.5.png 1.5x, ./images/logo/logo@x2.png 2x, ./images/logo/logo@x3.png 3x, ./images/logo/logo@x4.png 4x"
+                                 alt="Flylist logo"
+                                 class="header-menu-logo"
+                                 loading="lazy">
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Авторские туры
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Готовые туры
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Блог о путешествиях
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Премиальные предложения
+                        </a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">
+                            Отзывы наших клиентов
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <section class="top_content container">
+        <h1 class="top_content-title">МЫ создаём новые<br/>впечатления для вас</h1>
+        <h2 class="top_content-subtitle">Организация поездок любой сложности, гид по самым интересным локациям и визовая
+            поддержка</h2>
+        <button class="top_content-button top button primary" type="button">Получить консультацию</button>
+        <ul class="top_content-suggestions">
+            <li class="top_content-suggestion">
+                <h1 class="top_content-suggestion-title">160 +</h1>
+                <div class="top_content-suggestion-description">Стран по всему миру</div>
+            </li>
+            <li class="top_content-suggestion">
+                <h1 class="top_content-suggestion-title">до 20%</h1>
+                <div class="top_content-suggestion-description">Скидки на индивидуальные туры</div>
+            </li>
+            <li class="top_content-suggestion">
+                <h1 class="top_content-suggestion-title">Оформление виз</h1>
+                <div class="top_content-suggestion-description">в 20+ стран</div>
+            </li>
+        </ul>
+        <button class="top_content-button bottom button primary" type="button">Получить консультацию</button>
+    </section>
+</section>
+
+<!-- Контент -->
+
+<main class="content">
+
+    <!--  Авторские туры  -->
+
+    <section class="author_tours content-section container">
+        <div class="content-section-title">
+            <h1>
+                Авторские туры
+            </h1>
+            <a href="/" class="content-section-title-next icon-square-button">
+                <img src="icons/union.svg" alt="Перейти в раздел">
+            </a>
+        </div>
+        <h2 class="author_tours-subtitle content-section-subtitle">
+            Мы создаём уникальные авторские туры на грандиозные концерты, фестивали и культурные события по всему
+            миру.
+            Ваше приключение начинается здесь.
+        </h2>
+        <div class="author_tours-carousel content-section-carousel swiper mySwiper">
+            <div class="swiper-wrapper">
+                <a class="author_tours-card card swiper-slide">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_1.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card_badge">с 19 по 21 сентября 2025</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-content-title">Азербайджан:<br/>Формула-1 Гран-при</h2>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Не упустите возможности побывать на легендарных гонках, погрузиться в мир скорости и драйва,
+                            и увидеть лучших гонщиков планеты!
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
+
+                <a class="author_tours-card card swiper-slide">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_2.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card_badge">1 ноября 2025 года</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-content-title">Абу-Даби: Концерт Enrique Iglesias</h2>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Приготовьтесь к захватывающей ночи на концерте мировой латино-американской звезды Энрике
+                            Иглезиаса 1 ноября 2025 в Этихад Арена, Абу-Даби. На концерте будут как всемирно известные
+                            хиты, так и новые песни исполнителя.
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
+
+                <a class="author_tours-card card swiper-slide">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_3.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card_badge"> 26 июля 2025 года</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-content-title">Абу-Даби: UFC Fight Night</h2>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Приготовьтесь к захватывающей ночи, когда некоторые из элитных спортсменов UFC выйдут в
+                            октагон на острове Яс. Это шанс стать свидетелями сражений мирового класса вблизи и ощутить
+                            накал и азарт, как никогда раньше!
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
+
+                <a class="author_tours-card card swiper-slide">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_1.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card_badge">16 мая 2025 г</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-content-title">Доха: Концерт Travis Scott</h2>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Грандиозное шоу пройдет в Дохе – в Ahmad Bin Ali Stadium, вмещающем более 45 000 зрителей.
+                            Эта арена помнит бурю эмоций во время чемпионата мира по футболу в 2022 году, а теперь
+                            готовится к не менее мощному музыкальному потоку.
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div class="swiper-pagination-wrapper">
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="author_tours-suggestions">
+            <h2>Хотите получить авторский тур, собранный по вашим предпочтениям?</h2>
+            <button type="button" class="button secondary">
+                Получить консультацию
+            </button>
+        </div>
+    </section>
+
+    <!-- Пакетные туры  -->
+
+    <section class="author_tours content-section container">
+        <h1 class="author_tours-title content-section-title">
+            Пакетные туры
+        </h1>
+        <h2 class="author_tours-subtitle content-section-subtitle">
+            В цену включены перелёт, проживание, трансфер и медицинская страховка
+        </h2>
+    </section>
+
+    <!-- Эксклюзивные предложения  -->
+
+    <section class="author_tours content-section container">
+        <h1 class="author_tours-title content-section-title">
+            Эксклюзивные предложения
+        </h1>
+    </section>
+
+    <!-- Блог о путешествиях  -->
+
+    <section class="author_tours content-section container">
+        <h1 class="author_tours-title content-section-title">
+            Блог о путешествиях
+        </h1>
+        <h2 class="author_tours-subtitle content-section-subtitle">
+            Рассказываем о самом интересном
+        </h2>
+    </section>
+
+</main>
+
+
+<!-- Swiper JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Скрипты -->
+
+<script src="scripts.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+</body>
+</html>
