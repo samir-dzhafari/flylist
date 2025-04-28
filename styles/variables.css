@@ -3,20 +3,19 @@
     /* Цвета */
 
     --color-ligth: #FFFFFF;
-    --color-dark: #464646;
 
-    --color-gray: #B7B7B7;
-    --color-red: #FD654E;
-    --color-beige: #F3F1EB;
+    --color-gray: #565655;
+    --color-beige: #F5F7FA;
+
+    --color-red: #E41D12;
+    --color-red-hover: #D61B11;
+    --color-red-pressed: #C0170E;
 
     --color-accent: #16181D;
     --color-accent-hover: #2E2525;
     --color-accent-pressed: #5E5959;
 
-    --color-red-hover: #D5503C;
-    --color-red-pressed: #EE5D46;
-
-    --color-dark-rgb: 0, 0, 0;
+    --color-accent-rgba: rgba(22, 24, 29, 0.7);
 
     /*  Бордер  */
 
@@ -32,8 +31,8 @@
     --fs-sm-max: 18px;
     --fs-md: 20px;
     --fs-md-max: 24px;
-    --fs-xl: 32px;
-    --fs-lg: 48px;
+    --fs-lg: 32px;
+    --fs-xl: 48px;
 
     /* Контейнер */
 

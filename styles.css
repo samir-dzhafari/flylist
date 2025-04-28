@@ -14,6 +14,10 @@
 
 @import url("./styles/card.css");
 
+/* Swiper */
+
+@import url("./styles/swiper.css");
+
 /* Body */
 
 body {
@@ -21,28 +25,22 @@ body {
     line-height: 1.4;
     font-weight: 300;
 
-    color: var(--color-dark);
+    color: var(--color-accent);
     background-color: var(--color-ligth);
 
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: clamp(42px, calc(6.33vw + 14px), 80px);
 
-    font-size: var(--fs-xs);
-
-    @media (min-width: 600px) {
-        font-size: var(--fs-sm);
-    };
-
-    @media (min-width: 900px) {
-        font-size: var(--fs-md);
-    };
+    font-size: clamp(var(--fs-xs), 2.5vw, var(--fs-md));
+    overflow-x: hidden;
 }
 
 /* Контейнер */
 
 .container {
-    max-width: 1320px;
+    width: 1320px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -53,42 +51,36 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--fm-title);
     line-height: 1.1;
     font-weight: 700;
-    color: var(--color-dark);
+    color: var(--color-accent);
+    margin: 0;
 }
 
 h1 {
-    font-size: calc(var(--fs-lg) / 2);
-
-    @media (min-width: 600px) {
-        font-size: calc(var(--fs-lg) / 1.5);
-    };
-
-    @media (min-width: 900px) {
-        font-size: calc(var(--fs-lg) / 1.2);
-    };
-
-    @media (min-width: 1224px) {
-        font-size: var(--fs-lg);
-    }
+    font-size: clamp(24px, 5vw, var(--fs-xl));
 }
 
 h2 {
-    font-size: var(--fs-sm-max);
-
-    @media (min-width: 600px) {
-        font-size: var(--fs-md-max);
-    };
-
-    @media (min-width: 900px) {
-        font-size: var(--fs-xl);
-    };
+    font-size: clamp(var(--fs-sm-max), 4vw, var(--fs-lg));
 }
 
 /* Ссылки */
 
 a {
     text-decoration: none;
-    color: var(--color-dark)
+    color: var(--color-accent)
+}
+
+/* Кит */
+
+.underline {
+    text-decoration: underline;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 31px;
+    align-items: center;
 }
 
 /* Кнопки */
@@ -99,7 +91,7 @@ button {
 
 .button {
     font-family: var(--fm-title);
-    font-size: 16px;
+    font-size: clamp(var(--fs-xs), 2.5vw, var(--fs-sm));
     line-height: 1.4;
     font-weight: 700;
     letter-spacing: 0;
@@ -108,21 +100,30 @@ button {
     color: var(--color-ligth);
     border-radius: var(--border-radius);
     padding: 16px 36px;
+    white-space: nowrap;
 }
 
 .button.primary {
     background-color: var(--color-red);
 }
 
+.button.primary:hover {
+    background-color: var(--color-red-hover);
+}
+
+.button.primary:active {
+    background-color: var(--color-red-pressed);
+}
+
 .button.secondary {
     background-color: var(--color-accent);
 }
 
-.button:hover {
+.button.secondary:hover {
     background-color: var(--color-accent-hover);
 }
 
-.button:active {
+.button.secondary:active {
     background-color: var(--color-accent-pressed);
 }
 
@@ -130,23 +131,34 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px;
-    height: 48px;
+    width: clamp(32px, calc(5.6vw + 6.4px), 48px);
+    height: clamp(32px, calc(5.6vw + 6.4px), 48px);
     border-radius: 6px;
-    background-color: var(--color-beige);
-    color: #393A3A
+    color: var(--color-gray)
 }
 
-.icon-square-button img {
-    width: 28.8px;
-    height: 22.4px;
+.icon-square-button.gray {
+    background-color: var(--color-beige);
+}
+
+.icon-square-button.primary {
+    background-color: var(--color-red);
+}
+
+.icon-square-button.primary:hover {
+    background-color: var(--color-red-hover);
+}
+
+.icon-square-button.primary:active {
+    background-color: var(--color-red-pressed);
 }
 
 /* Стартовая секция */
 
 .start_page {
     width: 100%;
-    background: url("./images/header-background.jpg") no-repeat 0% 85%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("./images/header-background.jpg") no-repeat 0% 85%;
     background-size: 141%;
 
     @media (max-width: 1140px) {
@@ -158,7 +170,7 @@ button {
 /* Шапка */
 
 .header {
-    background-color: rgba(var(--color-dark-rgb), 0.7);
+    background-color: var(--color-accent-rgba);
     width: 100%;
     display: flex;
     position: fixed;
@@ -168,32 +180,82 @@ button {
 }
 
 .header-menu {
+    display: flex;
+    align-items: center;
     margin: 16px 0;
+}
+
+.header-menu-logos {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu-logo {
+    margin-right: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);
+}
+
+.header-menu-logo-flylist {
+    margin: 1px 0;
+    width: clamp(63.52px, calc(5.6vw + 24.4px), 76px);
+    height: clamp(28.33px, calc(2.5vw + 11.8px), 34px);
+    min-width: 63.52px;
+    min-height: 28.33px;
+}
+
+.header-menu-logo-alfacapital {
+    margin: 1px 0;
+    width: clamp(65.73px, calc(5.6vw + 24.4px), 78.65px);
+    height: clamp(17.75px, calc(2.5vw + 11.8px), 21.3px);
+    min-width: 65.73px;
+    min-height: 17.75px;
+}
+
+.header-menu-button {
+    display: flex;
+
+    @media (min-width: 1065px) {
+        display: none;
+    }
 }
 
 .header-menu-list {
     display: flex;
     align-items: center;
-    column-gap: 53px;
+    column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);
 
-    font-size: var(--fs-sm);
+    font-size: clamp(var(--fs-xs), 1.2vw, var(--fs-sm));
 
     list-style-type: none;
+
+    justify-content: right;
+
+    @media (min-width: 1065px) {
+        justify-content: initial;
+    };
 }
 
 .header-menu-item {
     display: flex;
 }
 
-.header-menu-logo {
-    margin: 1px 0;
-    min-width: 76px;
-    min-height: 34px;
+@media (max-width: 1065px) {
+    .header {
+        background-color: var(--color-gray);
+    }
+
+    .header-menu {
+        justify-content: space-between;
+    }
+
+    .header-menu-item {
+        display: none;
+    }
 }
 
 .header-menu-link {
     color: var(--color-ligth);
     transition-duration: var(--transition-duration);
+    white-space: nowrap;
 }
 
 .header-menu-link:hover {
@@ -204,11 +266,56 @@ button {
     color: var(--color-red-pressed)
 }
 
+.header-menu-link.active {
+    color: var(--color-red);
+}
+
+/* Мобильное меню */
+
+/* Открытый хэдер */
+
+.header.open {
+    background-color: var(--color-gray); /* полностью серый фон */
+    /*background-color: rgba(var(--color-accent-rgb), 0.7); !* прозрачный серый фон *!*/
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header.open .header-menu {
+    align-items: normal;
+    position: relative;
+}
+
+/* Меню в открытом состоянии */
+.header.open .header-menu-list {
+    position: absolute;
+    top: calc(100% + 32px); /* на 32px ниже кнопки */
+    right: 0; /* прибиваем к правому краю */
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 32px;
+    width: auto;
+    font-size: var(--fs-sm);
+}
+
+/* Показываем все пункты меню */
+.header.open .header-menu-item {
+    display: flex !important;
+}
+
+/* Скрыть логотип в открытом меню (если нужно) */
+.header.open .header-menu-item:first-child {
+    display: none;
+}
+
 /* Топ контент */
 
 .top_content {
-    padding-top: calc(81px + 68px);
-    padding-bottom: 81px;
+    /* margin вычисляется в скриптах */
+    padding-top: clamp(42px, calc(6.33vw + 14px), 80px);
+    padding-bottom: clamp(42px, calc(6.33vw + 14px), 80px);
 }
 
 .top_content-title {
@@ -300,6 +407,24 @@ button {
 
 }
 
+.top_content-contacts {
+    display: none;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 600px) {
+        display: flex;;
+    };
+}
+
+.top_content-contacts img {
+    height: 32px;
+}
+
+.top_content-contacts a {
+    color: var(--color-ligth);
+}
+
 /* Контент */
 
 .content {
@@ -309,14 +434,23 @@ button {
     margin-bottom: 80px;
 }
 
-.content-section-title {
+.content-section-title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.content-section-title {
+    margin-bottom: 16px;
+}
+
 .content-section-title-next {
 
+}
+
+.content-section-title-next img {
+    width: 28.8px;
+    height: 22.4px;
 }
 
 .content-section-subtitle {
@@ -349,13 +483,13 @@ button {
 }
 
 .author_tours-card {
-    height: 760px;
     display: block;
 }
 
 .author_tours-card-image {
-    width: 410px;
-    height: 493px;
+    /*width: clamp(207px, calc(20vw + 137px), 410px);*/
+    height: clamp(231px, calc(20vw + 137px), 493px);
+    max-width: 100%;
     overflow: hidden;
     position: relative;
 
@@ -366,23 +500,27 @@ button {
     height: 100%;
     object-fit: cover;
     transform: scale(1.73);
-    transform-origin: 63% 37%;
+    transform-origin: 50% 37%;
     display: block;
+
+    @media (max-width: 890px) {
+        transform: scale(1);
+    }
 }
 
 .author_tours-descriptions {
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    --line-height: 1.4;
+
+    margin-top: auto;
+    flex-grow: 1;
     display: -webkit-box;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    max-height: calc(3em * var(--line-height));
 }
 
 .author_tours-suggestions {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*padding: 31px 36px;*/
-
     background-color: var(--color-beige);
     border-radius: var(--border-radius);
     display: grid;
@@ -399,5 +537,74 @@ button {
 
 .author_tours-suggestions button {
     grid-column: 10 / span 3;
+    margin-left: auto;
+    /*width: 100%;*/
+}
+
+@media (max-width: 1220px) {
+    .author_tours-suggestions h2 {
+        grid-column: 1 / span 8;
+    }
+
+    .author_tours-suggestions button {
+        grid-column: 9 / span 5;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 875px) {
+    .author_tours-suggestions {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .author_tours-suggestions h2 {
+        width: 100%;
+        line-height: 1.4;
+    }
+
+    .author_tours-suggestions button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Маркетинг */
+
+.marketing {
+    background-color: var(--color-beige);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.marketing-content {
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.marketing-title {
+    margin: 0;
+}
+
+.marketing-subtitle {
+    margin: 0;
+}
+
+.marketing-content button {
+    padding: 16px 58.5px;
+}
+
+.marketing-image-wrapper {
+    grid-column: 9 / span 4;
+}
+
+.marketing-image {
     width: 100%;
+    height: auto;
+    display: block;
 }

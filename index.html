@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./styles/swiper.css">
 </head>
 <body class="light-theme">
 
@@ -23,28 +22,33 @@
         <!-- Навигация -->
         <section class="container">
             <nav class="header-menu">
+                <div class="header-menu-logos">
+                    <a href="/" class="header-menu-logo">
+                        <img src="./icons/logo.svg"
+                             alt="Flylist logo"
+                             loading="lazy"
+                             class="header-menu-logo-flylist">
+                    </a>
+                    <a href="/" class="header-menu-logo">
+                        <img src="./icons/logoAlfaCapital.svg"
+                             alt="Alfa Capital logo"
+                             loading="lazy"
+                             class="header-menu-logo-alfacapital">
+                    </a>
+                </div>
                 <ul class="header-menu-list">
                     <li class="header-menu-item">
-                        <a href="/" class="header-menu-item_link">
-                            <img src="./images/logo/logo@x1.png"
-                                 srcset="./images/logo/logo@x1.5.png 1.5x, ./images/logo/logo@x2.png 2x, ./images/logo/logo@x3.png 3x, ./images/logo/logo@x4.png 4x"
-                                 alt="Flylist logo"
-                                 class="header-menu-logo"
-                                 loading="lazy">
-                        </a>
-                    </li>
-                    <li class="header-menu-item">
-                        <a href="/" class="header-menu-link">
+                        <a href="#top" class="header-menu-link">
                             Главная
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="/" class="header-menu-link">
+                        <a href="#author-tours" class="header-menu-link">
                             Авторские туры
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="/" class="header-menu-link">
+                        <a href="#test-tours" class="header-menu-link">
                             Готовые туры
                         </a>
                     </li>
@@ -64,11 +68,14 @@
                         </a>
                     </li>
                 </ul>
+                <button id="menu-button" type="button" class="header-menu-button icon-square-button primary">
+                    <img src="icons/burger.svg" alt="Меню">
+                </button>
             </nav>
         </section>
     </header>
 
-    <section class="top_content container">
+    <section id="top" class="top_content container">
         <h1 class="top_content-title">МЫ создаём новые<br/>впечатления для вас</h1>
         <h2 class="top_content-subtitle">Организация поездок любой сложности, гид по самым интересным локациям и визовая
             поддержка</h2>
@@ -79,15 +86,23 @@
                 <div class="top_content-suggestion-description">Стран по всему миру</div>
             </li>
             <li class="top_content-suggestion">
-                <h1 class="top_content-suggestion-title">до 20%</h1>
-                <div class="top_content-suggestion-description">Скидки на индивидуальные туры</div>
+                <h1 class="top_content-suggestion-title">до 20%</h1>
+                <div class="top_content-suggestion-description">Скидки на индивидуальные туры</div>
             </li>
             <li class="top_content-suggestion">
-                <h1 class="top_content-suggestion-title">Оформление виз</h1>
+                <h1 class="top_content-suggestion-title">Оформление виз</h1>
                 <div class="top_content-suggestion-description">в 20+ стран</div>
             </li>
         </ul>
+
         <button class="top_content-button bottom button primary" type="button">Получить консультацию</button>
+
+        <div class="top_content-contacts">
+            <img src="icons/vk.svg" alt="ВК">
+            <img src="icons/tg.svg" alt="Телеграм">
+            <a class="underline" href="mailto:Info@flylist.com">Info@flylist.com</a>
+        </div>
+
     </section>
 </section>
 
@@ -97,13 +112,13 @@
 
     <!--  Авторские туры  -->
 
-    <section class="author_tours content-section container">
-        <div class="content-section-title">
-            <h1>
+    <section id="author-tours" class="author_tours content-section container">
+        <div class="content-section-title-wrapper">
+            <h1 class="content-section-title">
                 Авторские туры
             </h1>
-            <a href="/" class="content-section-title-next icon-square-button">
-                <img src="icons/union.svg" alt="Перейти в раздел">
+            <a href="/" class="content-section-title-next icon-square-button gray">
+                <img src="icons/next.svg" alt="Перейти в раздел">
             </a>
         </div>
         <h2 class="author_tours-subtitle content-section-subtitle">
@@ -190,9 +205,31 @@
         </div>
     </section>
 
+    <section class="marketing content-section">
+        <div class="container grid">
+            <div class="marketing-content">
+                <h1 class="marketing-title content-section-title">
+                    Карты для зарубежных покупок
+                </h1>
+                <h2 class="marketing-subtitle content-section-subtitle">
+                    Мы создаём уникальные авторские туры на грандиозные концерты, фестивали и культурные события по
+                    всему
+                    миру.
+                    Ваше приключение начинается здесь.
+                </h2>
+                <button type="button" class="button primary">
+                    Узнать подробнее
+                </button>
+            </div>
+            <div class="marketing-image-wrapper">
+                <img src="./images/marketing-image.png" alt="Картинка партнера" class="marketing-image">
+            </div>
+        </div>
+    </section>
+
     <!-- Пакетные туры  -->
 
-    <section class="author_tours content-section container">
+    <section id="test-tours" class="author_tours content-section container">
         <h1 class="author_tours-title content-section-title">
             Пакетные туры
         </h1>
@@ -229,20 +266,8 @@
 
 <!-- Скрипты -->
 
+<script src="swiperScript.js"></script>
 <script src="scripts.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    freeMode: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-</script>
 
 </body>
 </html>

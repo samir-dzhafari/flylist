@@ -12,7 +12,7 @@
 }
 
 .swiper-slide {
-
+    height: auto;
 }
 
 .swiper-pagination-wrapper {
@@ -36,7 +36,7 @@
 .swiper-pagination-bullet {
     width: 16px;
     height: 16px;
-    background-color: #B7B7B7;
+    background-color: var(--color-gray);
     opacity: 1;
     border-radius: 50%;
     margin: 0 2px !important;
@@ -44,5 +44,5 @@
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #FD654E;
+    background-color: var(--color-red);
 }
