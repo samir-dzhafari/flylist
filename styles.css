@@ -78,7 +78,7 @@ a {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 31px;
     align-items: center;
 }
@@ -428,10 +428,13 @@ button {
 /* Контент */
 
 .content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .content-section {
-    margin-bottom: 80px;
+
 }
 
 .content-section-title-wrapper {
@@ -455,6 +458,10 @@ button {
 
 .content-section-subtitle {
     margin-bottom: 28px;
+}
+
+.content-section-content {
+
 }
 
 .content-section-carousel {
@@ -568,38 +575,28 @@ button {
 /* Маркетинг */
 
 .marketing {
-    background-color: var(--color-beige);
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .marketing-content {
-    grid-column: 1 / span 8;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    align-items: flex-start;
 }
 
 .marketing-title {
-    margin: 0;
+
 }
 
 .marketing-subtitle {
-    margin: 0;
+    font-size: var(--fs-md-max);
+    line-height: 1.2;
 }
 
 .marketing-content button {
     padding: 16px 58.5px;
 }
 
-.marketing-image-wrapper {
-    grid-column: 9 / span 4;
-}
-
 .marketing-image {
-    width: 100%;
-    height: auto;
+    min-width: 484px;
     display: block;
 }
 
@@ -701,4 +698,29 @@ button {
         width: 100%;
         margin-left: 0;
     }
+}
+
+/* Эксклюзивные предложения */
+
+.exclusive_offers {
+
+}
+
+.exclusive_offers h1 {
+    margin-bottom: 28px;
+}
+
+.exclusive_offers-content {
+    display: flex;
+    gap: 16px;
+}
+
+.exclusive_offers-card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exclusive_offers-card-title, .exclusive_offers-card-subtitle {
+    line-height: 1.4;
 }

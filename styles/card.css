@@ -57,3 +57,22 @@
     text-decoration: underline;
     align-self: flex-start;
 }
+
+.card_suggestion {
+    background-color: var(--color-beige);
+    padding: 20px;
+
+}
+
+.card_suggestion-content {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.card_suggestion-image {
+    grid-column: 3 / span 1;
+    overflow: hidden;
+}
