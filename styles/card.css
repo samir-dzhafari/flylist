@@ -6,6 +6,9 @@
     flex-direction: column;
     height: 100%;
 
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
     cursor: pointer;
 }
 
@@ -13,10 +16,15 @@
 
 }
 
-.card_badge {
+.card-badge {
     position: absolute;
     top: 12px;
     left: 12px;
+    display: flex;
+    gap: 6px;
+}
+
+.card-badge-item {
     background: var(--color-ligth);
     color: var(--color-accent);
     padding: 10px;
