@@ -53,12 +53,12 @@
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="/" class="header-menu-link">
+                        <a href="#exclusive_offers" class="header-menu-link">
                             Премиальные предложения
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="/" class="header-menu-link">
+                        <a href="#feedback" class="header-menu-link">
                             Отзывы наших клиентов
                         </a>
                     </li>
@@ -243,9 +243,16 @@
         <h2 class="package_tours-subtitle content-section-subtitle">
             В цену включены перелёт, проживание, трансфер и медицинская страховка
         </h2>
+
+        <div class="package_tours-filter">
+            <button class="button primary" data-filter="all">Все туры</button>
+            <button class="button unactive" data-filter="turkey">Турция</button>
+            <button class="button unactive" data-filter="asd">asd</button>
+        </div>
+
         <div class="package_tours-carousel content-section-carousel swiper package_tours_swiper">
             <div class="swiper-wrapper">
-                <a class="package_tours-card card swiper-slide">
+                <a class="package_tours-card card swiper-slide" data-country="turkey">
                     <div class="package_tours-card-image card-image">
                         <img src="./images/packageTours/image_1.png" alt="Формула 1 Азербайджан">
                         <div class="card-badge">
@@ -262,7 +269,7 @@
                     </div>
                 </a>
 
-                <a class="package_tours-card card swiper-slide">
+                <a class="package_tours-card card swiper-slide" data-country="asd">
                     <div class="package_tours-card-image card-image">
                         <img src="./images/packageTours/image_2.png" alt="Формула 1 Азербайджан">
                         <div class="card-badge">
@@ -271,7 +278,7 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-content-title">Турция</h2>
+                        <h2 class="card-content-title">asd Турция</h2>
                         <p class="package_tours-descriptions card-content-descriptions">
                             Cornelia Diamond Golf Resort & Spa 5* (Турция, Искеле)
                         </p>
@@ -279,7 +286,7 @@
                     </div>
                 </a>
 
-                <a class="package_tours-card card swiper-slide">
+                <a class="package_tours-card card swiper-slide" data-country="turkey">
                     <div class="package_tours-card-image card-image">
                         <img src="./images/packageTours/image_3.png" alt="Формула 1 Азербайджан">
                         <div class="card-badge">
@@ -296,7 +303,7 @@
                     </div>
                 </a>
 
-                <a class="package_tours-card card swiper-slide">
+                <a class="package_tours-card card swiper-slide" data-country="turkey">
                     <div class="package_tours-card-image card-image">
                         <img src="./images/packageTours/image_4.png" alt="Формула 1 Азербайджан">
                         <div class="card-badge">
@@ -473,6 +480,35 @@
 
 </main>
 
+<footer class="footer">
+    <section class="footer-content container">
+        <div class="footer-content-info">
+            <div>
+                Flylist — Текст о том кто мы что мы<br/> С нами вы откроете мир по‑новому.
+            </div>
+            <div>
+                ОГРН 4389820032
+            </div>
+            <div>
+                ООО «Flylist»
+            </div>
+        </div>
+
+        <div class="footer-content-contacts">
+            <div class="footer-content-contacts_social_networks">
+                <a href="">
+                    <img src="./icons/tg_red.svg" alt="Телеграм">
+                </a>
+                <a href="">
+                    <img src="./icons/vk_red.svg" alt="ВК">
+                </a>
+            </div>
+            <a href="mailto:Info@flylist.com">
+                Info@flylist.com
+            </a>
+        </div>
+    </section>
+</footer>
 
 <!-- Swiper JS -->
 
