@@ -39,7 +39,7 @@ body {
 /* Контейнер */
 
 .container {
-    width: 1320px;
+    width: 1330px;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -61,6 +61,10 @@ h1 {
 
 h2 {
     font-size: clamp(var(--fs-sm-max), 4vw, var(--fs-lg));
+}
+
+h3 {
+    font-size: clamp(var(--fs-xs), 3vw, var(--fs-lg-min));
 }
 
 /* Ссылки */
@@ -158,7 +162,7 @@ button {
 .start_page {
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("./images/header-background.jpg") no-repeat 0% 85%;
+    url("images/header/header-background.jpg") no-repeat 0% 85%;
     background-size: 141%;
 
     @media (max-width: 1140px) {
@@ -703,7 +707,10 @@ button {
 /* Эксклюзивные предложения */
 
 .exclusive_offers {
+}
 
+.exclusive_offers-grid {
+    gap: 0 !important;
 }
 
 .exclusive_offers h1 {
@@ -712,7 +719,17 @@ button {
 
 .exclusive_offers-content {
     display: flex;
+    justify-content: space-between;
     gap: 16px;
+}
+
+.exclusive_offers-card {
+    padding: 0;
+    flex: 1;
+}
+
+.exclusive_offers-card-content {
+    padding: 20px;
 }
 
 .exclusive_offers-card-content-wrapper {
@@ -723,4 +740,79 @@ button {
 
 .exclusive_offers-card-title, .exclusive_offers-card-subtitle {
     line-height: 1.4;
+}
+
+/* Отзывы клиентов */
+
+.feedback {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./images/feedback/background.jpg") no-repeat 0% 85%;
+    background-size: 141%;
+
+    @media (max-width: 1140px) {
+        background-size: cover;
+        background-position: center center;
+    };
+
+    padding: 75px 0;
+}
+
+.feedback-card {
+    flex: 1;
+    height: auto;
+    padding: 18px 31px;
+}
+
+.feedback-card .card-content {
+    margin: 0;
+}
+
+.feedback-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feedback-title {
+    color: var(--color-ligth);
+    margin: 0;
+}
+
+.feedback-carousel {
+    display: flex;
+    gap: 8px;
+}
+
+.feedback-card-title {
+    font-family: var(--fm-base);
+    font-weight: 300;
+}
+
+.feedback-card-descriptions {
+    flex: 1;
+    font-size: var(--fs-xs);
+}
+
+.feedback-rating {
+    display: flex;
+    gap: 19px;
+}
+
+.feedback-rating-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-rating-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.feedback-rating-info-person {
+    font-size: 14px;
 }
