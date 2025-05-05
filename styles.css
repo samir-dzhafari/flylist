@@ -59,10 +59,14 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(var(--fs-sm-max), 4vw, var(--fs-lg));
+    font-size: clamp(24px, 5vw, var(--fs-xl));
 }
 
 h3 {
+    font-size: clamp(var(--fs-sm-max), 4vw, var(--fs-lg));
+}
+
+h4 {
     font-size: clamp(var(--fs-xs), 3vw, var(--fs-lg-min));
 }
 
@@ -539,7 +543,7 @@ button {
     align-items: center;
 }
 
-.author_tours-suggestions h2 {
+.author_tours-suggestions h3 {
     grid-column: 1 / span 7;
     margin: 0;
 }
@@ -551,7 +555,7 @@ button {
 }
 
 @media (max-width: 1220px) {
-    .author_tours-suggestions h2 {
+    .author_tours-suggestions h3 {
         grid-column: 1 / span 8;
     }
 
@@ -569,7 +573,7 @@ button {
         padding: 20px;
     }
 
-    .author_tours-suggestions h2 {
+    .author_tours-suggestions h3 {
         width: 100%;
         line-height: 1.4;
     }
@@ -687,7 +691,7 @@ button {
     align-items: center;
 }
 
-.package_tours-suggestions h2 {
+.package_tours-suggestions h3 {
     grid-column: 1 / span 7;
     margin: 0;
 }
@@ -698,7 +702,7 @@ button {
 }
 
 @media (max-width: 1220px) {
-    .package_tours-suggestions h2 {
+    .package_tours-suggestions h3 {
         grid-column: 1 / span 8;
     }
 
@@ -716,7 +720,7 @@ button {
         padding: 20px;
     }
 
-    .package_tours-suggestions h2 {
+    .package_tours-suggestions h3 {
         width: 100%;
         line-height: 1.4;
     }
@@ -736,7 +740,7 @@ button {
     gap: 0 !important;
 }
 
-.exclusive_offers h1 {
+.exclusive_offers h2 {
     margin-bottom: 28px;
 }
 
