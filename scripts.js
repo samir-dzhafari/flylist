@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
           link.classList.remove("active");
-          if (link.getAttribute("href") === `#${sectionId}`) {
+          if (link.getAttribute("data-value") === `${sectionId}`) {
             link.classList.add("active");
           }
         });
@@ -85,27 +85,393 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
+slider?.addEventListener('mousedown', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener('mouseleave', () => {
+slider?.addEventListener('mouseleave', () => {
   isDown = false;
   slider.classList.remove('active');
 });
 
-slider.addEventListener('mouseup', () => {
+slider?.addEventListener('mouseup', () => {
   isDown = false;
   slider.classList.remove('active');
 });
 
-slider.addEventListener('mousemove', (e) => {
+slider?.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 1.5; // Скорость прокрутки
   slider.scrollLeft = scrollLeft - walk;
+});
+
+// Форматтер номера телефона
+
+const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', (e) => {
+  let value = e.target.value.replace(/\D/g, '');
+
+  // Удаляем "8" в начале и заменяем на "7" (для РФ)
+  if (value.startsWith('8')) {
+    value = '7' + value.slice(1);
+  }
+
+  // Убедимся, что номер начинается с "7"
+  if (!value.startsWith('7')) {
+    value = '7' + value;
+  }
+
+  // Обрезаем до максимум 11 цифр (без кода страны)
+  value = value.slice(0, 11);
+
+  // Форматируем
+  let formatted = '+7';
+  if (value.length > 1) {
+    formatted += ' (' + value.slice(1, 4);
+  }
+  if (value.length >= 4) {
+    formatted += ') ' + value.slice(4, 11);
+  }
+
+  e.target.value = formatted;
+});
+
+document.querySelectorAll('.select-box').forEach((box) => {
+  const selected = box.querySelector('.selected');
+  const options = box.querySelector('.options');
+  const popupWindow = box.closest('.popup-window');
+
+  // Функция для вычисления максимальной высоты для меню
+  function setMaxHeight() {
+    const popupRect = popupWindow.getBoundingClientRect(); // Получаем размеры попапа
+    const availableHeight = popupRect.height - box.getBoundingClientRect().top - 30; // 20px для отступов
+    options.style.maxHeight = `${Math.min(availableHeight, 220)}px`; // Устанавливаем максимум 220px
+  }
+
+  setMaxHeight();
+  window.addEventListener('resize', setMaxHeight);
+
+  box.addEventListener('click', () => {
+    box.classList.toggle('open');
+  });
+
+  options.querySelectorAll('li').forEach((option) => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const value = e.target.getAttribute('data-value');
+      selected.textContent = e.target.textContent;
+      box.classList.add('filled');
+      box.classList.remove('open');
+      box.dataset.value = value;
+    });
+  });
+
+  // Закрыть при клике вне
+  document.addEventListener('click', (e) => {
+    if (!box.contains(e.target)) {
+      box.classList.remove('open');
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('req');
+  const submitButton = document.getElementById('submit-button');
+  const inputs = form.querySelectorAll('input, .select-box');
+
+  // Функция для проверки, все ли поля заполнены
+  function checkFormCompletion() {
+    let allFilled = true;
+
+    inputs.forEach(input => {
+      if (input.tagName.toLowerCase() === 'input') {
+        if (!input.value.length) {
+          allFilled = false;
+        }
+      } else if (input.classList.contains('select-box')) {
+        const selectedOption = input.querySelector('.selected').textContent;
+        if (selectedOption === 'Выберете направление') {
+          allFilled = false;
+        }
+      }
+    });
+
+    // Включаем или отключаем кнопку в зависимости от заполненности формы
+    if (allFilled) {
+      submitButton.classList.remove('unactive');
+      submitButton.removeAttribute('disabled');
+      submitButton.classList.add('primary');
+    } else {
+      submitButton.classList.add('unactive');
+      submitButton.classList.remove('primary');
+      submitButton.setAttribute('disabled', true);
+    }
+  }
+
+  // Проверяем форму при изменении значений
+  inputs.forEach(input => {
+    if (input.tagName.toLowerCase() === 'input') {
+      input.addEventListener('input', checkFormCompletion);
+    } else if (input.classList.contains('select-box')) {
+      const options = input.querySelectorAll('.options li');
+      options.forEach(option => {
+        option.addEventListener('click', checkFormCompletion);
+      });
+    }
+  });
+
+  // Выполняем начальную проверку при загрузке страницы
+  checkFormCompletion();
+});
+
+
+
+
+
+let typingTimer; // Таймер для отслеживания окончания ввода
+const typingDelay = 400; // Задержка в 1000 мс (1 секунда)
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('req');
+  const submitButton = document.getElementById('submit-button');
+  const inputs = form.querySelectorAll('input, .select-box');
+
+  // Функция для проверки, все ли поля заполнены
+  function checkFormCompletion() {
+    let allFilled = true;
+
+    inputs.forEach(input => {
+      if (input.tagName.toLowerCase() === 'input') {
+        if (!input.value.length) {
+          allFilled = false;
+        }
+      } else if (input.classList.contains('select-box')) {
+        const selectedOption = input.querySelector('.selected').textContent;
+        if (selectedOption === 'Выберете направление') {
+          allFilled = false;
+        }
+      }
+    });
+
+    // Включаем или отключаем кнопку в зависимости от заполненности формы
+    if (allFilled) {
+      submitButton.classList.remove('unactive');
+      submitButton.removeAttribute('disabled');
+      submitButton.classList.add('primary');
+    } else {
+      submitButton.classList.add('unactive');
+      submitButton.classList.remove('primary');
+      submitButton.setAttribute('disabled', true);
+    }
+  }
+
+  // Функция для проверки полей
+  function validateField(input) {
+    if (input.tagName.toLowerCase() === 'input') {
+      // Проверка инпутов
+      if (input.id === 'name') {
+        const nameError = document.getElementById('name-error');
+        if (input.value.trim().length < 2) {
+          input.classList.add('error');
+          nameError.style.display = 'block';
+        } else {
+          input.classList.remove('error');
+          nameError.style.display = 'none';
+        }
+      } else if (input.id === 'phone') {
+        const phoneError = document.getElementById('phone-error');
+        if (!isValidPhone(input.value)) {
+          input.classList.add('error');
+          phoneError.style.display = 'block';
+        } else {
+          input.classList.remove('error');
+          phoneError.style.display = 'none';
+        }
+      } else if (input.id === 'email') {
+        const emailError = document.getElementById('email-error');
+        if (!isValidEmail(input.value)) {
+          input.classList.add('error');
+          emailError.style.display = 'block';
+        } else {
+          input.classList.remove('error');
+          emailError.style.display = 'none';
+        }
+      }
+    } else if (input.classList.contains('select-box')) {
+      // Проверка селектора
+      const selectBox = input;
+      const selectError = document.getElementById('select-error');
+      if (selectBox.querySelector('.selected').textContent === 'Выберете направление') {
+        selectBox.classList.add('error');
+        selectError.style.display = 'block';
+      } else {
+        selectBox.classList.remove('error');
+        selectError.style.display = 'none';
+      }
+    }
+  }
+
+  // Функция для обработки ввода с задержкой
+  function handleInput(event) {
+    const input = event.target;
+
+    // Очистка предыдущего таймера
+    clearTimeout(typingTimer);
+
+    // Установка нового таймера
+    typingTimer = setTimeout(() => {
+      validateField(input);
+      checkFormCompletion();
+    }, typingDelay);
+  }
+
+  // Проверяем форму при изменении значений
+  inputs.forEach(input => {
+    if (input.tagName.toLowerCase() === 'input') {
+      input.addEventListener('input', handleInput);
+    } else if (input.classList.contains('select-box')) {
+      const options = input.querySelectorAll('.options li');
+      options.forEach(option => {
+        option.addEventListener('click', handleInput);
+      });
+    }
+  });
+
+  // Выполняем начальную проверку при загрузке страницы
+  checkFormCompletion();
+});
+
+// Функция для проверки телефона
+function isValidPhone(phone) {
+  const regex = /^\+7 \(\d{3}\) \d{7}$/;
+  return regex.test(phone);
+}
+
+// Функция для проверки email
+function isValidEmail(email) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('request-popup');
+  const openButtons = document.querySelectorAll('.open-request-popup');
+  const closeButtons = document.querySelectorAll('.close-request-popup');
+
+  // Открытие popup по клику на любую кнопку
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Закрытие по кнопке закрытия
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      popup.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Закрытие при клике вне окна
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('request-popup');
+  const openButtons = document.querySelectorAll('.open-request-popup');
+  const closeButtons = document.querySelectorAll('close-request-popup');
+  const submitButton = document.getElementById('submit-button');
+  const firstStep = document.querySelector('.first_step');
+  const secondStep = document.querySelector('.second_step');
+  const form = document.getElementById('req');
+
+  // Открытие popup по клику на любую кнопку
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Закрытие по кнопке закрытия
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      popup.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Закрытие при клике вне окна
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Переход на второй шаг после отправки формы
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+    // Если форма валидна
+    if (form.checkValidity()) {
+      // Переход на второй шаг
+      firstStep.classList.add('hidden');
+      secondStep.classList.remove('hidden');
+
+      // Очистка формы (если нужно)
+      form.reset();
+    }
+  });
+
+  // Проверка кнопки "Отправить" (активация при валидности формы)
+  form.addEventListener('input', checkFormCompletion);
+
+  // Проверка, все ли поля заполнены
+  function checkFormCompletion() {
+    let allFilled = true;
+
+    const inputs = form.querySelectorAll('input, .select-box');
+
+    inputs.forEach(input => {
+      if (input.tagName.toLowerCase() === 'input') {
+        if (!input.value.length) {
+          allFilled = false;
+        }
+      } else if (input.classList.contains('select-box')) {
+        const selectedOption = input.querySelector('.selected').textContent;
+        if (selectedOption === 'Выберете направление') {
+          allFilled = false;
+        }
+      }
+    });
+
+    // Включаем или отключаем кнопку в зависимости от заполненности формы
+    if (allFilled) {
+      submitButton.classList.remove('unactive');
+      submitButton.removeAttribute('disabled');
+      submitButton.classList.add('primary');
+    } else {
+      submitButton.classList.add('unactive');
+      submitButton.classList.remove('primary');
+      submitButton.setAttribute('disabled', true);
+    }
+  }
 });

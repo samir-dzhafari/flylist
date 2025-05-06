@@ -38,27 +38,28 @@
                 </div>
                 <ul class="header-menu-list">
                     <li class="header-menu-item">
-                        <a href="#top" class="header-menu-link">
+                        <a data-value="top" href="#top" class="header-menu-link">
                             Главная
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="#author-tours" class="header-menu-link">
+                        <a data-value="author_tours" href="author-tours.html" target="_blank" class="header-menu-link">
                             Авторские туры
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="#package_tours" class="header-menu-link">
+                        <a data-value="package_tours" href="package-tours.html" target="_blank"
+                           class="header-menu-link">
                             Готовые туры
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="#exclusive_offers" class="header-menu-link">
+                        <a data-value="exclusive_offers" href="#exclusive_offers" class="header-menu-link">
                             Премиальные предложения
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a href="#feedback" class="header-menu-link">
+                        <a data-value="feedback" href="#feedback" class="header-menu-link">
                             Отзывы наших клиентов
                         </a>
                     </li>
@@ -74,7 +75,8 @@
         <h1 class="top_content-title">МЫ создаём новые<br/>впечатления для вас</h1>
         <h3 class="top_content-subtitle">Организация поездок любой сложности, гид по самым интересным локациям и визовая
             поддержка</h3>
-        <button class="top_content-button top button primary" type="button">Получить консультацию</button>
+        <button class="top_content-button top button primary open-request-popup" type="button">Получить консультацию
+        </button>
         <ul class="top_content-suggestions">
             <li class="top_content-suggestion">
                 <h2 class="top_content-suggestion-title">160 +</h2>
@@ -90,7 +92,9 @@
             </li>
         </ul>
 
-        <button class="top_content-button bottom button primary" type="button">Получить консультацию</button>
+        <button class="top_content-button bottom button primary open-request-popup" type="button">Получить
+            консультацию
+        </button>
 
         <div class="top_content-contacts">
             <img src="icons/vk.svg" alt="ВК">
@@ -107,7 +111,7 @@
 
     <!--  Авторские туры  -->
 
-    <section id="author-tours" class="author_tours content-section container">
+    <section id="author_tours" class="author_tours content-section container">
         <div class="content-section-title-wrapper">
             <h2 class="content-section-title">
                 Авторские туры
@@ -203,7 +207,7 @@
 
         <div class="author_tours-suggestions">
             <h3>Хотите получить авторский тур, собранный по вашим предпочтениям?</h3>
-            <button type="button" class="button secondary">
+            <button type="button" class="button secondary open-request-popup">
                 Получить консультацию
             </button>
         </div>
@@ -219,7 +223,7 @@
                     Мы помогаем сделать поездку ещё приятнее. Отправляйтесь в путешествие спокойно, имея при себе
                     работающую банковскую карту.
                 </div>
-                <button type="button" class="button primary">
+                <button type="button" class="button primary open-request-popup">
                     Узнать подробнее
                 </button>
             </div>
@@ -344,7 +348,7 @@
                         <div class="exclusive_offers-card-subtitle">
                             Разрабатываем уникальные маршруты, учитывая все ваши пожелания и предпочтения
                         </div>
-                        <button type="button" class="button primary">
+                        <button type="button open-request-popup" class="button primary">
                             Собрать путешествие
                         </button>
                     </div>
@@ -367,7 +371,7 @@
                                 ярмарках
                             </div>
                         </div>
-                        <button type="button" class="button primary">
+                        <button type="button" class="button primary open-request-popup">
                             Оставить заявку
                         </button>
                     </div>
@@ -393,12 +397,14 @@
                 <div class="feedback-card card">
                     <div class="card-content">
                         <h4 class="feedback-card-title card-content-title">Оформление визы</h4>
-                        <p class="feedback-card-descriptions card-content-descriptions">
-                            Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
-                            были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
-                            а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
-                            и получить визу без лишних задержек.
-                        </p>
+                        <div class="feedback-card-descriptions card-content-descriptions">
+                            <p>
+                                Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
+                                были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
+                                а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
+                                и получить визу без лишних задержек.
+                            </p>
+                        </div>
                         <div class="feedback-rating">
                             <img src="./images/feedback/avatar.png" alt="Аватар" class="feedback-rating-image">
                             <div class="feedback-rating-info">
@@ -414,11 +420,13 @@
                 <div class="feedback-card card">
                     <div class="card-content">
                         <h4 class="feedback-card-title card-content-title">Индивидуальный тур</h4>
-                        <p class="feedback-card-descriptions card-content-descriptions">
-                            Учли все мои пожелания, предложили интересные идеи и собрали маршрут, который идеально
-                            подошёл под мои запросы. Путешествие прошло гладко, все бронирования и трансферы были
-                            организованы на высшем уровне.
-                        </p>
+                        <div class="feedback-card-descriptions card-content-descriptions">
+                            <p>
+                                Учли все мои пожелания, предложили интересные идеи и собрали маршрут, который идеально
+                                подошёл под мои запросы. Путешествие прошло гладко, все бронирования и трансферы были
+                                организованы на высшем уровне.
+                            </p>
+                        </div>
                         <div class="feedback-rating">
                             <img src="./images/feedback/avatar.png" alt="Аватар" class="feedback-rating-image">
                             <div class="feedback-rating-info">
@@ -434,13 +442,16 @@
                 <div class="feedback-card card">
                     <div class="card-content">
                         <h4 class="feedback-card-title card-content-title">Оформление визы</h4>
-                        <p class="feedback-card-descriptions card-content-descriptions">
-                            Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
-                            были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
-                            а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
-                            и получить визу без лишних задержек. Рекомендую всем, кто хочет оформить визу без стресса
-                            и лишней головной боли!
-                        </p>
+                        <div class="feedback-card-descriptions card-content-descriptions">
+                            <p>
+                                Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
+                                были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
+                                а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
+                                и получить визу без лишних задержек. Рекомендую всем, кто хочет оформить визу без
+                                стресса
+                                и лишней головной боли!
+                            </p>
+                        </div>
                         <div class="feedback-rating">
                             <img src="./images/feedback/avatar.png" alt="Аватар" class="feedback-rating-image">
                             <div class="feedback-rating-info">
@@ -456,13 +467,16 @@
                 <div class="feedback-card card">
                     <div class="card-content">
                         <h4 class="feedback-card-title card-content-title">Оформление визы</h4>
-                        <p class="feedback-card-descriptions card-content-descriptions">
-                            Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
-                            были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
-                            а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
-                            и получить визу без лишних задержек. Рекомендую всем, кто хочет оформить визу без стресса
-                            и лишней головной боли!
-                        </p>
+                        <div class="feedback-card-descriptions card-content-descriptions">
+                            <p>
+                                Очень доволен сервисом оформления визы! Процесс был простым и быстрым, сотрудники всегда
+                                были на связи и готовы помочь с любыми вопросами. Документы проверили внимательно,
+                                а все требования объяснили чётко и понятно. Благодаря этому удалось избежать ошибок
+                                и получить визу без лишних задержек. Рекомендую всем, кто хочет оформить визу без
+                                стресса
+                                и лишней головной боли!
+                            </p>
+                        </div>
                         <div class="feedback-rating">
                             <img src="./images/feedback/avatar.png" alt="Аватар" class="feedback-rating-image">
                             <div class="feedback-rating-info">
@@ -509,6 +523,80 @@
         </div>
     </section>
 </footer>
+
+<div id="request-popup" class="popup-overlay hidden">
+    <div class="popup-window">
+        <div class="popup-wrapper first_step">
+            <button class="popup-close button icon-button close-request-popup" aria-label="Закрыть">
+                <img src="icons/close.svg" alt="Закрыть"/>
+            </button>
+
+            <h2 class="popup-title">Заявка на консультацию</h2>
+
+            <div class="popup-content">
+                <form id="req" class="popup-form">
+                    <div class="textfield-standard">
+                        <input type="text" id="name" placeholder="Ваше имя" required/>
+                        <div class="underline"></div>
+                        <div class="textfield-error-message" id="name-error">Не введено имя</div>
+                    </div>
+
+                    <div class="textfield-standard">
+                        <input type="tel" id="phone" placeholder="Номер телефона" required maxlength="17"/>
+                        <div class="underline"></div>
+                        <div class="textfield-error-message" id="phone-error">Не корректный номер телефона</div>
+                    </div>
+
+                    <div class="textfield-standard">
+                        <input type="email" id="email" placeholder="Email" required/>
+                        <div class="underline"></div>
+                        <div class="textfield-error-message" id="email-error">Не корректная почта</div>
+                    </div>
+
+                    <div class="custom-select-standard">
+                        <div class="select-box">
+                            <div class="selected">Выберете направление</div>
+                            <img class="arrow-icon" src="icons/arrowDown.svg" alt="arrow" width="24" height="24">
+                            <span class="underline"></span>
+                            <ul class="options">
+                                <li data-value="Авторский групповой тур">Авторский групповой тур</li>
+                                <li data-value="Эксклюзивный тур">Эксклюзивный тур</li>
+                                <li data-value="Готовый тур">Готовый тур</li>
+                                <li data-value="Корпоративная поездка">Корпоративная поездка</li>
+                                <li data-value="Пока думаю">Пока думаю</li>
+                            </ul>
+                        </div>
+                        <div class="textfield-error-message" id="select-error">Не выбрано направление</div>
+                    </div>
+
+                </form>
+
+                <div class="popup-submit">
+                    <button type="submit" form="req" class="button unactive" id="submit-button" disabled>Отправить
+                    </button>
+
+                    <p class="popup-submit-disclaimer">
+                        Нажимая кнопку “Отправить” вы соглашаетесь с политикой конфиденциальности
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-wrapper second_step hidden">
+            <button class="popup-close button icon-button close-request-popup" aria-label="Закрыть">
+                <img src="icons/close.svg" alt="Закрыть"/>
+            </button>
+            <h2 class="popup-title">Благодарим за заявку!</h2>
+            <div class="popup-content">
+                <h3 class="popup-description">Менеджер свежется с вами в ближайшее время</h3>
+                <div class="popup-submit">
+                    <p class="popup-submit-disclaimer">
+                        Рабочее время:<br>Понедельник - пятница 10:00 - 19:00
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Swiper JS -->
 

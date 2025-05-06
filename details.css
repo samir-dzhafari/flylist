@@ -1,0 +1,88 @@
+/* Дизайн система */
+
+@import url("./styles/design-system.css");
+
+/* Шапка */
+
+.header {
+    position: sticky;
+}
+
+/* Контент */
+
+.content {
+    gap: 0;
+}
+
+.details-subtitle {
+    margin-bottom: 23px;
+}
+
+.details-carousel {
+    height: 387px;
+    margin-bottom: 42px;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.details-image {
+    object-fit: cover;
+}
+
+.pagination-wrapper {
+    margin-top: -24px;
+    margin-bottom: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-ligth);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-red);
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    margin-bottom: 48px;
+}
+
+.details-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.details-info-title {
+
+}
+
+.details-info-content {
+    font-size: var(--fs-md);
+    line-height: 1.4;
+}
+
+.details-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.details-descriptions div {
+    font-size: var(--fs-md);
+    line-height: 1.4;
+}
+
+.open-request-popup {
+    align-self: start;
+}

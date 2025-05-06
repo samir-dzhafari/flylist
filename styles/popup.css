@@ -1,0 +1,251 @@
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 15px;
+
+    display: flex;
+}
+
+.popup-overlay.hidden {
+    display: none;
+}
+
+.popup-window {
+    background: #fff;
+    border: rgba(228, 29, 18, 1) 3px solid;
+    height: 100%;
+    max-height: 856px;
+    width: 100%;
+    max-width: 575px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 28px;
+    overflow-y: hidden;
+}
+
+.popup-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    height: 100%;
+}
+
+.popup-close {
+    align-self: flex-end;
+    background: none;
+    padding: 0 !important;
+}
+
+.popup-title {
+
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 28px;
+}
+
+.popup-description {
+    font-weight: 300;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-submit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-submit-disclaimer {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-input);
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* Поле ввода */
+
+.textfield-standard {
+    position: relative;
+}
+
+.textfield-standard input {
+    width: 100%;
+    border: none;
+    font-size: var(--fs-sm);
+    padding: 0 0 17.6px 0;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.textfield-standard input:focus {
+    outline: none;
+}
+
+.textfield-standard input::placeholder {
+    color: var(--color-input);
+}
+
+.textfield-standard input:focus::placeholder {
+    color: transparent;
+    opacity: 0;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.textfield-standard input:focus + label,
+.textfield-standard input:not(:placeholder-shown) + label {
+    top: -14px;
+    font-size: 12px;
+    color: #1976d2;
+}
+
+.textfield-standard .underline {
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-input);
+}
+
+
+
+.custom-select-standard {
+    position: relative;
+}
+
+.select-box {
+    position: relative;
+    padding: 0 0 17.6px 0;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    pointer-events: none;
+    transition: transform var(--transition-duration) ease;
+}
+
+.select-box.open .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.select-box:focus {
+    outline: none;
+}
+
+.select-box.open .label,
+.select-box.filled .label {
+    top: -14px;
+    font-size: 12px;
+    color: #1976d2;
+}
+
+.select-box .selected {
+    font-size: var(--fs-sm);
+    color: var(--color-input);
+    transition: color 0.2s;
+}
+
+.select-box.filled .selected {
+    color: var(--color-black);
+}
+
+.select-box .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-input);
+}
+
+.options {
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 38.4px;
+    left: 0;
+    background: var(--color-ligth);
+    border-top: none;
+    max-height: 0;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 10;
+    color: var(--color-black);
+    border-bottom: var(--color-input) 1px solid;
+}
+
+.select-box.open .options {
+    overflow-y: auto;
+    max-height: 220px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.options li {
+    font-size: var(--fs-sm);
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.options li:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+
+.textfield-error-message {
+    color: var(--color-red);
+    font-size: var(--fs-sm);
+    margin-top: 4px;
+    display: none; /* Скрываем по умолчанию */
+}
+
+.textfield-standard input.error,
+.custom-select-standard .select-box.error {
+    border-color: var(--color-red); /* Красная рамка при ошибке */
+}
+
+.textfield-standard input.error + .underline {
+    background-color: var(--color-red);
+}
+
+.custom-select-standard .select-box.error .selected {
+    color: var(--color-red);
+}
+
+
+
+.popup-wrapper.second_step {
+    display: flex;
+}
+
+.popup-wrapper.second_step.hidden {
+    display: none;
+}
+
+.popup-wrapper.first_step.hidden {
+    display: none;
+}
