@@ -1,0 +1,68 @@
+/* Дизайн система */
+
+@import url("./styles/design-system.css");
+
+/* Шапка */
+
+.header {
+    position: sticky;
+}
+
+/* Контент */
+
+.author_tours-subtitle {
+    margin-bottom: clamp(16px, calc(2vw + 8px), 28px);
+}
+
+.package_tours-filter {
+    margin-bottom: clamp(16px, calc(2vw + 8px), 28px);
+}
+
+/* Фильтр */
+
+.package_tours-filter {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    cursor: grab;
+}
+
+.package_tours-filter button {
+    font-size: clamp(var(--fs-xs-min), 2.5vw, var(--fs-sm));
+    padding: clamp(10px, calc(0.04vw + 9.85px), 10.5px) 10px;
+}
+
+.package_tours-filter:active {
+    cursor: grabbing;
+}
+
+/* Фильтр -> Скрытие скролла */
+
+.package_tours-filter {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.package_tours-filter::-webkit-scrollbar {
+    display: none;
+}
+
+/* Карточки */
+
+.grid {
+    @media (max-width: 1140px) {
+        grid-template-columns: repeat(2, 1fr);
+    };
+
+    @media (max-width: 690px) {
+        grid-template-columns: repeat(1, 1fr);
+    };
+}
+
+.package_tours-card {
+    position: relative;
+    grid-column: auto;
+    grid-row: auto;
+}

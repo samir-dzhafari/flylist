@@ -2,7 +2,7 @@
     background-color: var(--color-ligth);
     box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
 
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     height: 100%;
 
@@ -14,6 +14,10 @@
 
 .card-image {
 
+}
+
+.card-image img {
+    width: 100%;
 }
 
 .card-badge {
@@ -29,7 +33,7 @@
     color: var(--color-accent);
     padding: 10px;
     border-radius: var(--border-radius);
-    font-size: var(--fs-xs);
+    font-size: clamp(var(--fs-xs-min), calc(0.75vw + 8.3px), var(--fs-xs));
     font-weight: 300;
 }
 

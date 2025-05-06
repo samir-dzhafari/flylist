@@ -1,0 +1,19 @@
+/* Дизайн система */
+
+@import url("./styles/design-system.css");
+
+/* Шапка */
+
+.header {
+    position: sticky;
+}
+
+/* Контент */
+
+/* Карточки */
+
+.package_tours-card {
+    position: relative;
+    grid-column: auto;
+    grid-row: auto;
+}
