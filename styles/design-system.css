@@ -199,6 +199,14 @@ button {
     display: flex;
     gap: min(64px, 2.5vw);
     align-items: center;
+
+    @media (max-width: 855px) {
+        gap: 21px;
+    };
+
+    @media (max-width: 450px) {
+        gap: 16.5px;
+    };
 }
 
 .header-menu-logo {
@@ -208,9 +216,8 @@ button {
 .header-menu-logo-flylist {
     margin: 1px 0;
     width: clamp(63.52px, calc(5.6vw + 24.4px), 76px);
-    height: clamp(28.33px, calc(2.5vw + 11.8px), 34px);
     min-width: 63.52px;
-    min-height: 28.33px;
+    aspect-ratio: calc(63.53 / 30);
 }
 
 .header-menu-logo-alfacapital {
@@ -252,7 +259,7 @@ button {
 
 @media (max-width: 855px) {
     .header {
-        background-color: var(--color-gray);
+        background-color: var(--color-header-gray);
     }
 
     .header-menu {
@@ -287,7 +294,7 @@ button {
 /* Открытый хэдер */
 
 .header.open {
-    background-color: var(--color-gray); /* полностью серый фон */
+    background-color: var(--color-header-gray); /* полностью серый фон */
     /*background-color: rgba(var(--color-accent-rgb), 0.7); !* прозрачный серый фон *!*/
     height: 100vh;
     flex-direction: column;
