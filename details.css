@@ -4,8 +4,14 @@
 
 /* Шапка */
 
-.header {
+.start_page {
+    z-index: 900;
     position: sticky;
+    top: 0;
+}
+
+.header {
+    position: initial;
 }
 
 /* Контент */
