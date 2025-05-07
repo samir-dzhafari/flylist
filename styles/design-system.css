@@ -91,7 +91,6 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 31px;
-    align-items: center;
 }
 
 /* Кнопки */

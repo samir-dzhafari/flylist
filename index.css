@@ -387,7 +387,21 @@
 }
 
 .exclusive_offers-grid {
+    height: 100%;
     gap: 0 !important;
+
+    @media (max-width: 1040px) {
+        display: flex;
+        justify-content: start;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    @media (max-width: 550px) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
 }
 
 .exclusive_offers h2 {
@@ -398,6 +412,10 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
+
+    @media (max-width: 550px) {
+        flex-direction: column;
+    }
 }
 
 .exclusive_offers-card {
@@ -407,17 +425,46 @@
 
 .exclusive_offers-card-content {
     padding: 20px;
+    @media (max-width: 1040px) {
+       padding-top: 0;
+        flex: 1;
+    }
 }
 
 .exclusive_offers-card-content-wrapper {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.exclusive_offers-card-title, .exclusive_offers-card-subtitle {
+.exclusive_offers-card-title,
+.exclusive_offers-card-subtitle {
     line-height: 1.4;
 }
+
+.exclusive_offers-grid .card_suggestion-image {
+    align-self: start;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1040px) {
+        padding: 20px 20px 0 20px;
+        max-height: 227px;
+        aspect-ratio: 1.01 / 1;
+    }
+
+    @media (max-width: 550px) {
+        padding: 20px 20px 0 20px;
+        max-width: 167px;
+        max-height: 169px;
+    }
+}
+
+.exclusive_offers-image {
+}
+
 
 /* Отзывы клиентов */
 

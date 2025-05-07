@@ -80,4 +80,6 @@
 .card_suggestion-image {
     grid-column: 3 / span 1;
     overflow: hidden;
+    align-self: center;
+    justify-self: center;
 }
