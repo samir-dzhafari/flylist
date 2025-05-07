@@ -109,7 +109,7 @@ button {
     vertical-align: middle;
     color: var(--color-ligth);
     border-radius: var(--border-radius);
-    padding: 16px 36px;
+    padding: clamp(12px, calc(0.35vw + 10.74px), 16px) 36px;
     white-space: nowrap;
 }
 
@@ -191,16 +191,18 @@ button {
 .header-menu {
     display: flex;
     align-items: center;
+    gap: min(64px, 2.5vw);
     margin: 16px 0;
 }
 
 .header-menu-logos {
     display: flex;
+    gap: min(64px, 2.5vw);
     align-items: center;
 }
 
 .header-menu-logo {
-    margin-right: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);
+    /*margin-right: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);*/
 }
 
 .header-menu-logo-flylist {
@@ -222,7 +224,7 @@ button {
 .header-menu-button {
     display: flex;
 
-    @media (min-width: 1065px) {
+    @media (min-width: 855px) {
         display: none;
     }
 }
@@ -230,7 +232,8 @@ button {
 .header-menu-list {
     display: flex;
     align-items: center;
-    column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);
+    gap: min(64px, 2.5vw);
+    /*column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);*/
 
     font-size: clamp(var(--fs-xs), 1.2vw, var(--fs-sm));
 
@@ -238,7 +241,7 @@ button {
 
     justify-content: right;
 
-    @media (min-width: 1065px) {
+    @media (min-width: 855px) {
         justify-content: initial;
     };
 }
@@ -247,7 +250,7 @@ button {
     display: flex;
 }
 
-@media (max-width: 1065px) {
+@media (max-width: 855px) {
     .header {
         background-color: var(--color-gray);
     }

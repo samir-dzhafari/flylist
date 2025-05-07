@@ -242,7 +242,21 @@
     padding-bottom: 0;
 }
 
+.marketing-wrapper {
+    @media (max-width: 780px) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 8px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
 .marketing-content {
+    padding: 80px 0;
+    @media (max-width: 780px) {
+        padding: 0;
+    }
 }
 
 .marketing-title {
@@ -250,18 +264,62 @@
 }
 
 .marketing-subtitle {
-    font-size: var(--fs-md-max);
+    font-size: clamp(var(--fs-xs), calc(1.25vw + 9px), var(--fs-md-max));
     line-height: 1.2;
 }
 
 .marketing-content button {
-    padding: 16px 58.5px;
+    @media (max-width: 780px) {
+        align-self: normal;
+    }
+}
+
+/*
+.marketing-wrapper .card_suggestion-image {
+    align-self: start;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1040px) {
+        padding: 20px 20px 0 20px;
+        max-height: 247px;
+        aspect-ratio: 1.185 / 1;
+    }
+
+    @media (max-width: 550px) {
+        padding: 20px 20px 0 20px;
+        max-width: 198px;
+        max-height: 167px;
+    }
+}
+*/
+
+.marketing-wrapper .card_suggestion-image {
+    margin-left: 40px;
+
+    @media (max-width: 780px) {
+        margin: 0;
+        align-self: start;
+    }
 }
 
 .marketing-image {
-    min-width: 484px;
     display: block;
+    aspect-ratio: calc(484 / 381);
+    min-width: clamp(316px, calc(316px + 168 * ((100vw - 810px) / 520)), 484px);
+
+    @media (max-width: 1040px) {
+        max-width: 258px;
+        min-width: 258px;
+    }
+
+    @media (max-width: 600px) {
+        max-width: 198px;
+        min-width: 198px;
+    }
 }
+
 
 /* Готовые */
 
@@ -275,9 +333,25 @@
 
 .package_tours-filter {
     display: flex;
-    gap: 15px;
+    gap: clamp(8px, calc(0.5vw + 6px), 15px);
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    cursor: grab;
+}
+
+.package_tours-filter:active {
+    cursor: grabbing;
+}
+/* Фильтр -> Скрытие скролла */
+
+.package_tours-filter {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.package_tours-filter::-webkit-scrollbar {
+    display: none;
 }
 
 .package_tours-carousel {
@@ -494,6 +568,8 @@
     flex: 1;
     height: auto;
     padding: 18px 31px;
+    min-width: 320px;
+    cursor: inherit;
 }
 
 .feedback-card .card-content {
@@ -504,6 +580,23 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    overflow-x: auto;
+    cursor: grab;
+}
+
+.feedback-wrapper:active {
+    cursor: grabbing;
+}
+
+/* Скрытие скролла */
+
+.feedback-wrapper {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.feedback-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .feedback-title {
@@ -514,7 +607,9 @@
 .feedback-carousel {
     display: flex;
     gap: 8px;
+    flex-wrap: nowrap;
 }
+
 
 .feedback-card-title {
     font-family: var(--fm-base);
