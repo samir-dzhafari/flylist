@@ -51,10 +51,14 @@
 }
 
 .details-info {
-    display: flex;
-    flex-direction: column;
-    gap: 29px;
-    margin-bottom: 48px;
+}
+
+.details-info h3 {
+    margin-bottom: 16px;
+}
+
+.details-info p {
+    margin-bottom: 29px;
 }
 
 .details-info div {
