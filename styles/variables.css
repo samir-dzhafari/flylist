@@ -3,6 +3,9 @@
     /* Цвета */
 
     --color-ligth: #FFFFFF;
+    --color-ligth-hover: #FFE6E6;
+    --color-ligth-pressed: #FED4D4;
+
     --color-black: #000000;
 
     --color-gray: #565655;
@@ -57,21 +60,25 @@ body.orange-theme {
     /* Цвета */
 
     --color-ligth: #FFFFFF;
+    --color-ligth-hover: #FFE6E6;
+    --color-ligth-pressed: #FED4D4;
+
     --color-black: #000000;
 
-    --color-gray: #565655;
+    --color-gray: #B7B7B7;
 
-    --color-primary: #E41D12;
-    --color-primary-hover: #D61B11;
-    --color-primary-pressed: #C0170E;
+    --color-primary: #FD654E;
+    --color-primary-hover: #EE5D46;
+    --color-primary-pressed: #D5503C;
 
-    --color-accent: #16181D;
+    --color-accent: #393A3A;
     --color-accent-hover: #2E2525;
     --color-accent-pressed: #5E5959;
 
     --color-input: #9CA3AF;
     --color-header-gray: #393A3A;
-    --color-beige: #F5F7FA;
+
+    --color-beige: #F3F1EB;
 
     --color-accent-rgba: rgba(22, 24, 29, 0.7);
 

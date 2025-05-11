@@ -6,10 +6,19 @@
     flex-direction: column;
     height: 100%;
 
+    transition: background-color var(--transition-duration) ease;
     border-radius: var(--border-radius);
     overflow: hidden;
 
     cursor: pointer;
+}
+
+.card:hover {
+    background-color: var(--color-ligth-hover);
+}
+
+.card:active {
+    background-color: var(--color-ligth-pressed)
 }
 
 .card-image {
@@ -64,7 +73,6 @@
 .card_suggestion {
     background-color: var(--color-beige);
     padding: 20px;
-
 }
 
 .card_suggestion-content {

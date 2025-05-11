@@ -413,8 +413,7 @@ button {
 }
 
 .footer-content-contacts_social_networks img {
-    width: 32px;
-    height: 32px;
+    max-width: 32px;
 }
 
 .footer-content-contacts a {
