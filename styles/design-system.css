@@ -231,7 +231,7 @@ button {
 .header-menu-button {
     display: flex;
 
-    @media (min-width: 855px) {
+    @media (min-width: 856px) {
         display: none;
     }
 }
