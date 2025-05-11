@@ -118,15 +118,15 @@ button {
 }
 
 .button.primary {
-    background-color: var(--color-red);
+    background-color: var(--color-primary);
 }
 
 .button.primary:hover {
-    background-color: var(--color-red-hover);
+    background-color: var(--color-primary-hover);
 }
 
 .button.primary:active {
-    background-color: var(--color-red-pressed);
+    background-color: var(--color-primary-pressed);
 }
 
 .button.secondary {
@@ -156,15 +156,15 @@ button {
 }
 
 .icon-square-button.primary {
-    background-color: var(--color-red);
+    background-color: var(--color-primary);
 }
 
 .icon-square-button.primary:hover {
-    background-color: var(--color-red-hover);
+    background-color: var(--color-primary-hover);
 }
 
 .icon-square-button.primary:active {
-    background-color: var(--color-red-pressed);
+    background-color: var(--color-primary-pressed);
 }
 
 .icon_button {
@@ -278,15 +278,15 @@ button {
 }
 
 .header-menu-link:hover {
-    color: var(--color-red-hover)
+    color: var(--color-primary-hover)
 }
 
 .header-menu-link:active {
-    color: var(--color-red-pressed)
+    color: var(--color-primary-pressed)
 }
 
 .header-menu-link.active {
-    color: var(--color-red);
+    color: var(--color-primary);
 }
 
 /* Мобильное меню */
@@ -432,4 +432,42 @@ button {
     letter-spacing: 0.15px;
     color: rgba(0, 0, 0, 0.6);
     margin-bottom: 16px;
+    align-items: center;
+}
+
+.address span:nth-of-type(2) {
+    color: var(--color-black);
+}
+
+.address img:nth-of-type(1) {
+    display: none;
+    width: 20px;
+}
+
+@media (max-width: 500px) {
+    .address {
+        font-size: var(--fs-md-max);
+        font-weight: 700;
+        font-family: var(--fm-title);
+        line-height: 1.1;
+        color: var(--color-black);
+    }
+
+    .address img:nth-of-type(1) {
+        display: block;
+    }
+
+    .address img:nth-of-type(2) {
+        display: none;
+    }
+
+    .address span:nth-of-type(1) {
+        display: none;
+    }
+}
+
+.details-content .button {
+    @media (max-width: 500px) {
+        align-self: normal;
+    }
 }

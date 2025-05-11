@@ -157,19 +157,20 @@
 }
 
 .author_tours-card-image {
-    /*width: clamp(207px, calc(20vw + 137px), 410px);*/
-    height: clamp(231px, calc(20vw + 137px), 493px);
-    max-width: 100%;
+    width: 100%;
     overflow: hidden;
     position: relative;
-
 }
 
 .author_tours-card-image img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: calc(410 / 493);
     object-fit: cover;
     display: block;
+}
+
+.author_tours-card .card-content-title {
+
 }
 
 .author_tours-descriptions {
@@ -344,6 +345,7 @@
 .package_tours-filter:active {
     cursor: grabbing;
 }
+
 /* Фильтр -> Скрытие скролла */
 
 .package_tours-filter {
@@ -381,22 +383,27 @@
 }
 
 .package_tours-card-image {
-    height: clamp(118.79px, calc(20vw + 137px), 242px);
-    max-width: 100%;
+    /*height: clamp(118.79px, calc(20vw + 137px), 242px);*/
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
 
 .package_tours-card-image img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: calc(410 / 242);
     object-fit: cover;
     display: block;
+}
+
+.package_tours-card .card-content-title {
+    font-size: clamp(var(--fs-sm), calc(1.33vw + 11.2px), var(--fs-lg));
 }
 
 .package_tours-descriptions {
     --line-height: 1.4;
 
+    font-size: clamp(14px, calc(0.83vw + 11px), 20px);
     margin-top: auto;
     flex-grow: 1;
     display: -webkit-box;
@@ -405,6 +412,29 @@
     overflow: hidden;
     max-height: calc(2em * var(--line-height));
 }
+
+.package_tours-card.last .card-content-descriptions {
+    margin-top: 0;
+}
+
+.package_tours-card.last .card-content-title {
+    font-size: clamp(var(--fs-md-max), calc(2vw + 16px), var(--fs-xl));
+}
+
+.package_tours-card.last a {
+    margin-top: auto;
+    z-index: 2;
+}
+
+.package_tours-descriptions-loop {
+    position: absolute;
+    width: calc(100% / 1.75);
+    aspect-ratio: calc(235 / 224);
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
 
 .package_tours-suggestions {
     background-color: var(--color-beige);
@@ -501,12 +531,12 @@
 .exclusive_offers-card-content {
     padding: 20px;
     @media (max-width: 1040px) {
-       padding-top: 0;
+        padding-top: 0;
         flex: 1;
     }
 
     @media (max-width: 1040px) {
-         align-items: normal;
+        align-items: normal;
     }
 }
 

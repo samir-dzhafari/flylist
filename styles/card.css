@@ -2,7 +2,7 @@
     background-color: var(--color-ligth);
     box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
 
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     height: 100%;
 
@@ -48,9 +48,7 @@
 
 .card-content-title {
     --line-height: 1.4;
-
     line-height: var(--line-height);
-    /*min-height: calc(2em * var(--line-height));*/
 }
 
 .card-content-descriptions {
@@ -58,7 +56,7 @@
 }
 
 .card-content-link {
-    color: var(--color-red);
+    color: var(--color-primary);
     text-decoration: underline;
     align-self: flex-start;
 }
@@ -83,4 +81,9 @@
     overflow: hidden;
     align-self: center;
     justify-self: center;
+}
+
+.card-content a {
+    justify-content: center;
+    align-self: normal;
 }

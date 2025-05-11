@@ -25,8 +25,12 @@
 }
 
 .details-carousel {
-    height: 387px;
     margin-bottom: 42px;
+
+    @media (max-width: 700px) {
+        margin-left: calc(var(--container-padding-x) * -1);
+        min-width: 100vw;
+    }
 }
 
 .swiper {
@@ -35,25 +39,41 @@
 
 .details-image {
     object-fit: cover;
+    min-height: 175px;
+}
+
+.details-image img {
+    min-height: 175px;
+    object-fit: cover;
+    aspect-ratio: calc(1290 / 387);
 }
 
 .pagination-wrapper {
     margin-top: -24px;
-    margin-bottom: 0;
+    margin-bottom: 8px;
+
+    @media (max-width: 700px) {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
 }
 
 .swiper-pagination-bullet {
     background-color: var(--color-ligth);
+
+    @media (max-width: 700px) {
+        background-color: var(--color-gray);
+    }
 }
 
 .swiper-pagination-bullet-active {
-    background-color: var(--color-red);
+    background-color: var(--color-primary);
 }
 
 .details-content {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: clamp(42px, calc(0.47vw + 40.3px), 48px);
 }
 
 .details-info {
