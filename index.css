@@ -6,18 +6,17 @@
 
 .start_page {
     width: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))),
-    url("images/header/header-background.jpg") no-repeat 0% 85%;
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("images/header/header-background.jpg") no-repeat 0% 85%;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("images/header/header-background.jpg") no-repeat 0% 85%;
+    background-image:
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url("images/header/header-background.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 85%;
     background-size: 141%;
 
     @media (max-width: 1140px) {
         background-size: cover;
         background-position: center center;
-    };
+    }
 }
 
 /* Топ контент */
