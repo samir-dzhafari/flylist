@@ -51,13 +51,22 @@ var packageToursSwiper = new Swiper(".package_tours_swiper", {
   observeSlideChildren: true
 });
 
+var feedbackSwiper = new Swiper(".feedback_swiper", {
+  slidesPerView: "auto",      // автоопределение количества
+  spaceBetween: 16,           // отступы между слайдами
+  freeMode: true,
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true,
+});
+
 // Фильтр пакетных туров
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterButtons = document.querySelectorAll('.package_tours-filter button');
 
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       // Обновляем активную кнопку
       filterButtons.forEach(btn => {
         btn.classList.remove('primary');

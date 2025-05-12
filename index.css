@@ -765,7 +765,19 @@
         background-position: center center;
     };
 
-    padding: 75px 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.feedback-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: clamp(16px, calc(1.04vw + 11px), 30px);
 }
 
 .feedback-card {
@@ -775,7 +787,13 @@
     height: auto;
     padding: 18px 31px;
     min-width: 320px;
+    max-width: 320px;
     cursor: inherit;
+}
+
+.feedback-card.swiper-slide {
+    width: 320px !important; /* фиксируем ширину каждого слайда */
+    flex-shrink: 0; /* отключаем сжатие */
 }
 
 .feedback-card .card-content {
@@ -793,7 +811,6 @@
     gap: 30px;
     cursor: -webkit-grab;
     cursor: grab;
-    overflow: visible;
 }
 
 .feedback-wrapper:active {
@@ -804,8 +821,8 @@
 /* Скрытие скролла */
 
 .feedback-wrapper {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    /*scrollbar-width: none;*/
+    /*-ms-overflow-style: none;*/
 }
 
 .feedback-wrapper::-webkit-scrollbar {
@@ -818,15 +835,19 @@
 }
 
 .feedback-carousel {
-    overflow-x: auto;
+
+}
+
+.feedback-carousel .swiper-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 8px;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
 }
 
+.feedback-card {
+
+    display: block;
+}
 
 .feedback-card-title {
     font-family: var(--fm-base);

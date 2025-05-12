@@ -110,33 +110,6 @@ slider?.addEventListener('mousemove', (e) => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
-const feedbackSlider = document.querySelector('.feedback-carousel');
-
-feedbackSlider?.addEventListener('mousedown', (e) => {
-  isDown = true;
-  feedbackSlider.classList.add('active');
-  startX = e.pageX - feedbackSlider.offsetLeft;
-  scrollLeft = feedbackSlider.scrollLeft;
-});
-
-feedbackSlider?.addEventListener('mouseleave', () => {
-  isDown = false;
-  feedbackSlider.classList.remove('active');
-});
-
-feedbackSlider?.addEventListener('mouseup', () => {
-  isDown = false;
-  feedbackSlider.classList.remove('active');
-});
-
-feedbackSlider?.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - feedbackSlider.offsetLeft;
-  const walk = (x - startX) * 1.5; // Скорость прокрутки
-  feedbackSlider.scrollLeft = scrollLeft - walk;
-});
-
 // Форматтер номера телефона
 
 const phoneInput = document.getElementById('phone');
