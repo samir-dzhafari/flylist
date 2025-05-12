@@ -1,3 +1,16 @@
+window.addEventListener('resize', setPaddingTop); // Обновляем при изменении размера окна
+window.addEventListener('load', setPaddingTop); // Устанавливаем значение при загрузке страницы
+
+function setPaddingTop() {
+  const headerHeight = document.querySelector('.header').offsetHeight;
+
+  const content = document.querySelector('.top_content');
+
+  if (content) {
+    content.style.marginTop = `${headerHeight}px`; // 68px можно оставить как есть, или тоже подставить динамически
+  }
+}
+
 // Подсветка меню
 
 document.addEventListener("DOMContentLoaded", () => {
