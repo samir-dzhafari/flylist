@@ -110,7 +110,7 @@ slider?.addEventListener('mousemove', (e) => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
-const feedbackSlider = document.querySelector('.feedback-wrapper');
+const feedbackSlider = document.querySelector('.feedback-carousel');
 
 feedbackSlider?.addEventListener('mousedown', (e) => {
   isDown = true;

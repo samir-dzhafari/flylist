@@ -63,14 +63,21 @@
 /* Карточки */
 
 .grid {
-    @media (max-width: 1140px) {
-        grid-template-columns: repeat(2, 1fr);
-    };
 
-    @media (max-width: 690px) {
-        -ms-grid-columns: (1fr)[1];
+}
+
+@media (max-width: 1140px) {
+    .grid {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 690px) {
+    .grid {
+        -ms-grid-columns: 1fr;
         grid-template-columns: repeat(1, 1fr);
-    };
+    }
 }
 
 .package_tours-card {

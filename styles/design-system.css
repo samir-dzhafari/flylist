@@ -46,8 +46,8 @@ body {
 }
 
 html, body {
-    position:relative;
-    overflow-x:hidden;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Контейнер */
@@ -109,6 +109,7 @@ a {
 /* Кнопки */
 
 button {
+    padding: 0;
     border: 0;
 }
 
@@ -236,14 +237,18 @@ button {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
 
-    @media (max-width: 855px) {
+@media (max-width: 855px) {
+    .header-menu-logos {
         gap: 21px;
-    };
+    }
+}
 
-    @media (max-width: 450px) {
+@media (max-width: 450px) {
+    .header-menu-logos {
         gap: 16.5px;
-    };
+    }
 }
 
 .header-menu-logo {
@@ -269,8 +274,10 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+}
 
-    @media (min-width: 856px) {
+@media (min-width: 856px) {
+    .header-menu-button {
         display: none;
     }
 }
@@ -294,12 +301,14 @@ button {
     -ms-flex-pack: right;
 
     justify-content: right;
+}
 
-    @media (min-width: 855px) {
+@media (min-width: 855px) {
+    .header-menu-list {
         -webkit-box-pack: initial;
         -ms-flex-pack: initial;
         justify-content: initial;
-    };
+    }
 }
 
 .header-menu-item {
@@ -502,8 +511,10 @@ button {
     -ms-flex-align: end;
     align-items: end;
     gap: clamp(8px, calc(2.15vw + 0.3px), 30px);
+}
 
-    @media (max-width: 420px) {
+@media (max-width: 420px) {
+    .footer-content-contacts {
         top: auto;
         bottom: 0;
     }
@@ -576,7 +587,10 @@ button {
 }
 
 .details-content .button {
-    @media (max-width: 500px) {
+}
+
+@media (max-width: 500px) {
+    .details-content .button {
         -ms-flex-item-align: normal;
         -ms-grid-row-align: normal;
         align-self: normal;
