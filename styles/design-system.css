@@ -32,7 +32,14 @@ body {
     color: var(--color-accent);
     background-color: var(--color-ligth);
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 
     font-size: clamp(var(--fs-xs), 2.5vw, var(--fs-md));
@@ -92,7 +99,9 @@ a {
 }
 
 .grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 31px 1fr 31px 1fr;
     grid-template-columns: repeat(3, 1fr);
     gap: 31px;
 }
@@ -146,8 +155,14 @@ button {
 }
 
 .icon-square-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: clamp(32px, calc(5.6vw + 6.4px), 48px);
     height: clamp(32px, calc(5.6vw + 6.4px), 48px);
@@ -172,8 +187,14 @@ button {
 }
 
 .icon_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 24px;
     height: 24px;
@@ -185,23 +206,35 @@ button {
 .header {
     background-color: var(--color-accent-rgba);
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: fixed;
+    -webkit-column-gap: 53px;
+    -moz-column-gap: 53px;
     column-gap: 53px;
     top: 0;
     z-index: 900;
 }
 
 .header-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: min(64px, 2.5vw);
     margin: 16px 0;
 }
 
 .header-menu-logos {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: min(64px, 2.5vw);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
     @media (max-width: 855px) {
@@ -233,6 +266,8 @@ button {
 }
 
 .header-menu-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     @media (min-width: 856px) {
@@ -241,7 +276,11 @@ button {
 }
 
 .header-menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: min(64px, 2.5vw);
     /*column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);*/
@@ -250,14 +289,22 @@ button {
 
     list-style-type: none;
 
+    -webkit-box-pack: right;
+
+    -ms-flex-pack: right;
+
     justify-content: right;
 
     @media (min-width: 855px) {
+        -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
         justify-content: initial;
     };
 }
 
 .header-menu-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -267,6 +314,8 @@ button {
     }
 
     .header-menu {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
@@ -277,6 +326,8 @@ button {
 
 .header-menu-link {
     color: var(--color-ligth);
+    -webkit-transition-duration: var(--transition-duration);
+    -o-transition-duration: var(--transition-duration);
     transition-duration: var(--transition-duration);
     white-space: nowrap;
 }
@@ -301,11 +352,18 @@ button {
     background-color: var(--color-header-gray); /* полностью серый фон */
     /*background-color: rgba(var(--color-accent-rgb), 0.7); !* прозрачный серый фон *!*/
     height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
 }
 
 .header.open .header-menu {
+    -webkit-box-align: normal;
+    -ms-flex-align: normal;
     align-items: normal;
     position: relative;
 }
@@ -315,8 +373,15 @@ button {
     position: absolute;
     top: calc(100% + 32px); /* на 32px ниже кнопки */
     right: 0; /* прибиваем к правому краю */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 32px;
     width: auto;
@@ -325,6 +390,8 @@ button {
 
 /* Показываем все пункты меню */
 .header.open .header-menu-item {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
 }
 
@@ -337,9 +404,16 @@ button {
 
 .content {
     margin-top: clamp(42px, calc(6.33vw + 14px), 80px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: clamp(42px, calc(6.33vw + 14px), 80px);
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
@@ -348,8 +422,14 @@ button {
 }
 
 .content-section-title-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -387,11 +467,18 @@ button {
 
 .footer-content {
     position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .footer-content-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: clamp(8px, calc(2.15vw + 0.3px), 30px);
     font-size: 14px;
@@ -402,8 +489,17 @@ button {
     top: 0;
     right: 15px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: end;
     gap: clamp(8px, calc(2.15vw + 0.3px), 30px);
 
@@ -414,6 +510,8 @@ button {
 }
 
 .footer-content-contacts_social_networks {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: clamp(6px, calc(1.24vw + 1.5px), 22px);
 }
@@ -433,12 +531,16 @@ button {
 /* Адрес */
 
 .address {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-size: var(--fs-sm);
     line-height: 1.5;
     letter-spacing: 0.15px;
     color: rgba(0, 0, 0, 0.6);
     margin-bottom: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -475,6 +577,8 @@ button {
 
 .details-content .button {
     @media (max-width: 500px) {
+        -ms-flex-item-align: normal;
+        -ms-grid-row-align: normal;
         align-self: normal;
     }
 }

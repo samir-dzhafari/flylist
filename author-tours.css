@@ -6,6 +6,7 @@
 
 .start_page {
     z-index: 900;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
@@ -24,6 +25,7 @@
     };
 
     @media (max-width: 690px) {
+        -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     };
 }

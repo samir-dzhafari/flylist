@@ -27,11 +27,15 @@
 /* Фильтр */
 
 .package_tours-filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     gap: 15px;
     margin-bottom: 20px;
     overflow-x: auto;
+    cursor: -webkit-grab;
     cursor: grab;
 }
 
@@ -41,6 +45,7 @@
 }
 
 .package_tours-filter:active {
+    cursor: -webkit-grabbing;
     cursor: grabbing;
 }
 
@@ -63,6 +68,7 @@
     };
 
     @media (max-width: 690px) {
+        -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     };
 }

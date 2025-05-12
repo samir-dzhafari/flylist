@@ -2,10 +2,18 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     z-index: 1000;
     padding: 15px;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
 
     display: flex;
 
@@ -25,6 +33,7 @@
     max-height: 856px;
     width: 100%;
     max-width: 575px;
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     padding: 28px;
     overflow-y: hidden;
@@ -36,7 +45,12 @@
 }
 
 .popup-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 28px;
     position: relative;
@@ -44,6 +58,7 @@
 }
 
 .popup-close {
+    -ms-flex-item-align: end;
     align-self: flex-end;
     background: none;
     padding: 0 !important;
@@ -54,8 +69,15 @@
 }
 
 .popup-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 100%;
     gap: 28px;
@@ -66,13 +88,23 @@
 }
 
 .popup-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
 }
 
 .popup-submit {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 12px;
 }
@@ -99,6 +131,8 @@
     padding: 0 0 17.6px 0;
     background: transparent;
     outline: none;
+    -webkit-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
     transition: border-color 0.2s;
 }
 
@@ -106,13 +140,59 @@
     outline: none;
 }
 
+.textfield-standard input::-webkit-input-placeholder {
+    color: var(--color-input);
+}
+
+.textfield-standard input::-moz-placeholder {
+    color: var(--color-input);
+}
+
+.textfield-standard input:-ms-input-placeholder {
+    color: var(--color-input);
+}
+
+.textfield-standard input::-ms-input-placeholder {
+    color: var(--color-input);
+}
+
 .textfield-standard input::placeholder {
     color: var(--color-input);
+}
+
+.textfield-standard input:focus::-webkit-input-placeholder {
+    color: transparent;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.textfield-standard input:focus::-moz-placeholder {
+    color: transparent;
+    opacity: 0;
+    -moz-transition: opacity 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.textfield-standard input:focus:-ms-input-placeholder {
+    color: transparent;
+    opacity: 0;
+    -ms-transition: opacity 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.textfield-standard input:focus::-ms-input-placeholder {
+    color: transparent;
+    opacity: 0;
+    -ms-transition: opacity 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .textfield-standard input:focus::placeholder {
     color: transparent;
     opacity: 0;
+    -webkit-transition: opacity 0.2s ease, color 0.2s ease;
+    -o-transition: opacity 0.2s ease, color 0.2s ease;
     transition: opacity 0.2s ease, color 0.2s ease;
 }
 
@@ -148,10 +228,16 @@
     right: 0;
     top: 8px;
     pointer-events: none;
+    -webkit-transition: -webkit-transform var(--transition-duration) ease;
+    transition: -webkit-transform var(--transition-duration) ease;
+    -o-transition: transform var(--transition-duration) ease;
     transition: transform var(--transition-duration) ease;
+    transition: transform var(--transition-duration) ease, -webkit-transform var(--transition-duration) ease;
 }
 
 .select-box.open .arrow-icon {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 
@@ -169,6 +255,8 @@
 .select-box .selected {
     font-size: var(--fs-sm);
     color: var(--color-input);
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -198,6 +286,8 @@
     overflow: auto;
     opacity: 0;
     pointer-events: none;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     z-index: 10;
     color: var(--color-black);
@@ -247,6 +337,8 @@
 
 
 .popup-wrapper.second_step {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 

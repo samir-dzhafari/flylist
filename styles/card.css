@@ -1,10 +1,22 @@
 .card {
     background-color: var(--color-ligth);
+    -webkit-box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
 
+    display: -webkit-box !important;
+
+    display: -ms-flexbox !important;
+
     display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     height: 100%;
+
+    -webkit-transition: background-color var(--transition-duration) ease;
+
+    -o-transition: background-color var(--transition-duration) ease;
 
     transition: background-color var(--transition-duration) ease;
     border-radius: var(--border-radius);
@@ -33,6 +45,8 @@
     position: absolute;
     top: 12px;
     left: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 6px;
     z-index: 10;
@@ -49,8 +63,15 @@
 
 .card-content {
     margin: 20px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 12px;
 }
@@ -67,6 +88,7 @@
 .card-content-link {
     color: var(--color-primary);
     text-decoration: underline;
+    -ms-flex-item-align: start;
     align-self: flex-start;
 }
 
@@ -76,22 +98,41 @@
 }
 
 .card_suggestion-content {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: clamp(12px, calc(1.56vw + 6.4px), 28px);
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 }
 
 .card_suggestion-image {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
     grid-column: 3 / span 1;
     overflow: hidden;
+    -ms-grid-row-align: center;
     align-self: center;
+    -ms-grid-column-align: center;
     justify-self: center;
 }
 
 .card-content a {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-item-align: normal;
+    -ms-grid-row-align: normal;
     align-self: normal;
 }

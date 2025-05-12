@@ -13,16 +13,25 @@
 }
 
 .pagination-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-top: 28px;
     margin-bottom: 28px;
 }
 
 .swiper-pagination {
-    display: flex
-;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     position: relative;
@@ -42,6 +51,8 @@
     opacity: 1;
     border-radius: 50%;
     margin: 2px 2px !important;
+    -webkit-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
 
