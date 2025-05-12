@@ -20,6 +20,7 @@
 
 .top_content {
     /* margin вычисляется в скриптах */
+    margin-top: 68px;
     padding-top: clamp(42px, calc(6.33vw + 14px), 80px);
     padding-bottom: clamp(42px, calc(6.33vw + 14px), 80px);
 }
