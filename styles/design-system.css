@@ -36,7 +36,11 @@ body {
     flex-direction: column;
 
     font-size: clamp(var(--fs-xs), 2.5vw, var(--fs-md));
-    overflow-x: hidden;
+}
+
+html, body {
+    position:relative;
+    overflow-x:hidden;
 }
 
 /* Контейнер */
