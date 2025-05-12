@@ -70,18 +70,20 @@
 
 .top_content-button.top {
     display: block;
-
-    @media (max-width: 600px) {
-        display: none;
-    };
 }
 
 .top_content-button.bottom {
     display: none;
+}
 
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
+    .top_content-button.top {
+        display: none;
+    }
+
+    .top_content-button.bottom {
         display: block;
-    };
+    }
 }
 
 .top_content-suggestions {
