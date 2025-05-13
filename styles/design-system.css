@@ -79,7 +79,7 @@ h2 {
 
 h3 {
     font-weight: 400;
-    font-size: clamp(var(--fs-xs), 4vw, var(--fs-md-max));
+    font-size: clamp(var(--fs-xs), calc(1.39vw + 8.7px), var(--fs-md-max));
 }
 
 h4 {
