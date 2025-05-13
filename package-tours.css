@@ -84,3 +84,11 @@
     grid-column: auto;
     grid-row: auto;
 }
+
+.package_tours-card-image img {
+    width: 100%;
+    aspect-ratio: calc(410 / 242);
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
