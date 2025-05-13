@@ -1,0 +1,141 @@
+/* Дизайн система */
+
+@import url("./styles/design-system.css");
+
+/* Шапка */
+
+.start_page {
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+}
+
+/* Контент */
+
+.content {
+    gap: 0;
+}
+
+.author-tour-subtitle {
+    margin-bottom: 23px;
+}
+
+.author-tour-carousel {
+    position: relative;
+    margin-bottom: 42px;
+}
+
+@media (max-width: 700px) {
+    .author-tour-carousel {
+        margin-left: calc(var(--container-padding-x) * -1);
+        min-width: 100vw;
+    }
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.author-tour-image {
+    -o-object-fit: cover;
+    object-fit: cover;
+    min-height: 175px;
+}
+
+.author-tour-image img {
+    min-height: 175px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    aspect-ratio: calc(1290 / 387);
+}
+
+.pagination-wrapper {
+    margin-top: -24px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 700px) {
+    .pagination-wrapper {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-ligth);
+
+    @media (max-width: 700px) {
+        background-color: var(--color-gray);
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+}
+
+.author-tour-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: clamp(42px, calc(0.47vw + 40.3px), 48px);
+}
+
+.author-tour-info {
+}
+
+.author-tour-info h3 {
+    margin-bottom: 16px;
+}
+
+.author-tour-info p {
+    margin-bottom: 29px;
+}
+
+.author-tour-info div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.author-tour-info-title {
+
+}
+
+.author-tour-info-content {
+    font-size: var(--fs-md);
+    line-height: 1.4;
+}
+
+.author-tour-descriptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.author-tour-descriptions div {
+    font-size: var(--fs-md);
+    line-height: 1.4;
+}
+
+.open-request-popup {
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+}
