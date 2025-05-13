@@ -7,7 +7,7 @@ function setPaddingTop() {
   const content = document.querySelector('.top_content');
 
   if (content) {
-    content.style.marginTop = `${headerHeight}px`; // 68px можно оставить как есть, или тоже подставить динамически
+    content.style.paddingTop = `${headerHeight}px`; // 68px можно оставить как есть, или тоже подставить динамически
   }
 }
 
@@ -114,7 +114,7 @@ slider?.addEventListener('mousemove', (e) => {
 
 const phoneInput = document.getElementById('phone');
 
-phoneInput.addEventListener('input', (e) => {
+phoneInput?.addEventListener('input', (e) => {
   let value = e.target.value.replace(/\D/g, '');
 
   // Удаляем "8" в начале и заменяем на "7" (для РФ)
@@ -182,6 +182,9 @@ document.querySelectorAll('.select-box').forEach((box) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('req');
+  if (form == null) {
+    return
+  }
   const submitButton = document.getElementById('submit-button');
   const inputs = form.querySelectorAll('input, .select-box');
 
@@ -239,6 +242,9 @@ const typingDelay = 400; // Задержка в 1000 мс (1 секунда)
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('req');
+  if (form == null) {
+    return
+  }
   const submitButton = document.getElementById('submit-button');
   const inputs = form.querySelectorAll('input, .select-box');
 
@@ -363,6 +369,10 @@ function isValidEmail(email) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('request-popup');
+  if (popup == null) {
+    return
+  }
+
   const openButtons = document.querySelectorAll('.open-request-popup');
   const closeButtons = document.querySelectorAll('.close-request-popup');
 
@@ -401,6 +411,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const firstStep = document.querySelector('.first_step');
   const secondStep = document.querySelector('.second_step');
   const form = document.getElementById('req');
+
+  if (form == null) {
+    return
+  }
 
   // Открытие popup по клику на любую кнопку
   openButtons.forEach(button => {

@@ -26,9 +26,9 @@
 /* Топ контент */
 
 .top_content {
-    margin-top: 68px;
-    padding-top: clamp(42px, calc(6.33vw + 14px), 80px);
-    padding-bottom: clamp(42px, calc(6.33vw + 14px), 80px);
+    padding-top: 68px;
+    margin-top: clamp(42px, calc(6.33vw + 14px), 80px);
+    margin-bottom: clamp(42px, calc(6.33vw + 14px), 80px);
 }
 
 .top_content-title {
