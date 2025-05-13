@@ -195,6 +195,11 @@
 .author_tours-carousel {
 }
 
+.author_tours-carousel .swiper-slide {
+    max-width: 360px;
+    width: 100%;
+}
+
 .author_tours-carousel .swiper-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
