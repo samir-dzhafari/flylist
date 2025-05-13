@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('request-popup');
   const openButtons = document.querySelectorAll('.open-request-popup');
-  const closeButtons = document.querySelectorAll('close-request-popup');
+  const closeButtons = document.querySelectorAll('.close-request-popup');
   const submitButton = document.getElementById('submit-button');
   const firstStep = document.querySelector('.first_step');
   const secondStep = document.querySelector('.second_step');
@@ -406,7 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
   openButtons.forEach(button => {
     button.addEventListener('click', () => {
       popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
+      document.documentElement.style.overflowY = 'hidden';
     });
   });
 
@@ -414,7 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
   closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       popup.classList.add('hidden');
-      document.body.style.overflow = '';
+      document.body.style.overflowY = 'auto';
+      document.documentElement.style.overflowY = 'auto';
     });
   });
 
@@ -422,7 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
   popup.addEventListener('click', (e) => {
     if (e.target === popup) {
       popup.classList.add('hidden');
-      document.body.style.overflow = '';
+      document.body.style.overflowY = 'auto';
+      document.documentElement.style.overflowY = 'auto';
     }
   });
 
