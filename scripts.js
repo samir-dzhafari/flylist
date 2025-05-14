@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return
   }
   const submitButton = document.querySelector('.popup-submit .button');
-  const inputs = form.querySelectorAll('input, .select-box');
+  const inputs = form.querySelectorAll('.textfield-standard input, .select-box');
 
   // Функция для проверки, все ли поля заполнены
   function checkFormCompletion() {
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkFormCompletion() {
     let allFilled = true;
 
-    const inputs = form.querySelectorAll('input, .select-box');
+    const inputs = form.querySelectorAll('.textfield-standard input, .select-box');
 
     inputs.forEach(input => {
       if (input.tagName.toLowerCase() === 'input') {
