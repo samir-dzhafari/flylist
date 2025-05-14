@@ -70,20 +70,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(24px, 5vw, var(--fs-xl));
+    font-size: clamp(var(--fs-md-max), 5vw, var(--fs-xl));
 }
 
 h2 {
-    font-size: clamp(24px, 5vw, var(--fs-xl));
+    font-size: clamp(var(--fs-md-max), 5vw, var(--fs-xl));
 }
 
 h3 {
     font-weight: 400;
-    font-size: clamp(var(--fs-xs), calc(1.39vw + 8.7px), var(--fs-md-max));
+    font-size: var(--fs-md-max);
 }
 
 h4 {
-    font-size: clamp(var(--fs-xs), 3vw, var(--fs-lg-min));
+    font-size: clamp(24px, 28px - 1.887vw, 26px);
 }
 
 /* Ссылки */
@@ -116,7 +116,7 @@ button {
 
 .button {
     font-family: var(--fm-title);
-    font-size: clamp(var(--fs-xs), 2.5vw, var(--fs-sm));
+    font-size: var(--fs-sm);
     line-height: 1.4;
     font-weight: 700;
     letter-spacing: 0;
@@ -166,14 +166,14 @@ button {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: clamp(32px, calc(5.6vw + 6.4px), 48px);
-    height: clamp(32px, calc(5.6vw + 6.4px), 48px);
+    width: clamp(20px, 2.5vw + 11px, 48px);
+    height: clamp(20px, 2.5vw + 11px, 48px);
     border-radius: 6px;
     color: var(--color-gray)
 }
 
 .icon-square-button.gray {
-    background-color: var(--color-beige);
+    background-color: var(--color-gray);
 }
 
 .icon-square-button.primary {
@@ -275,6 +275,10 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    border-radius: 20px;
+
+    width: clamp(32px, calc(5.6vw + 6.4px), 48px);
+    height: clamp(32px, calc(5.6vw + 6.4px), 48px);
 }
 
 @media (min-width: 856px) {
@@ -441,6 +445,11 @@ button {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-bottom: 16px;
+}
+
+.content-section-title-wrapper .content-section-title {
+    margin-bottom: 0;
 }
 
 .content-section-title {
@@ -452,8 +461,8 @@ button {
 }
 
 .content-section-title-next img {
-    width: 28.8px;
-    height: 22.4px;
+    width: clamp(12px, 1.5849vw + 6px, 28.8px);
+    height: clamp(9.33px, 1.2264vw + 4.6667px, 22.4px);
 }
 
 .content-section-subtitle {

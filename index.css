@@ -225,7 +225,7 @@
 }
 
 .author_tours-card .card-content-title {
-
+    font-size: clamp(var(--fs-sm-max), 2vw + 10px, var(--fs-lg));
 }
 
 .author_tours-descriptions {
@@ -342,7 +342,7 @@
 }
 
 .marketing-title {
-
+    font-size: clamp(24px, 1.698vw + 15.55px, 32px);
 }
 
 .marketing-subtitle {
@@ -661,10 +661,6 @@
     }
 }
 
-.exclusive_offers h2 {
-    margin-bottom: 28px;
-}
-
 .exclusive_offers-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -693,6 +689,7 @@
 
 .exclusive_offers-card-content {
     padding: 20px;
+    gap: 28px;
 }
 
 @media (max-width: 1040px) {
@@ -701,6 +698,7 @@
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
+        gap: 12px;
     }
 }
 
@@ -730,6 +728,10 @@
     .exclusive_offers-card-content-wrapper {
         gap: 12px;
     }
+}
+
+.exclusive_offers-card-title {
+    font-size: clamp(24px, 1.698vw + 15.55px, 32px);
 }
 
 .exclusive_offers-card-title,
