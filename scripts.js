@@ -51,12 +51,12 @@ burgerButton.addEventListener('click', () => {
 
 // Фильтр пакетных туров
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterButtons = document.querySelectorAll('.package_tours-filter button');
   const grid = document.querySelector('.grid'); // Получаем контейнер с карточками
 
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       // Обновляем активную кнопку
       filterButtons.forEach(btn => {
         btn.classList.remove('primary');
@@ -320,7 +320,6 @@ function isValidEmail(email) {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('request-popup');
   if (popup == null) {
@@ -354,7 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -397,10 +395,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.addEventListener('wpcf7mailsent', function(event) {
+  document.addEventListener('wpcf7mailsent', function (event) {
     if (form.checkValidity()) {
-    firstStep.classList.add('hidden');
-    secondStep.classList.remove('hidden');
+      firstStep.classList.add('hidden');
+      secondStep.classList.remove('hidden');
     }
   }, false);
 

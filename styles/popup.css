@@ -399,3 +399,11 @@
 .popup-wrapper.first_step.hidden {
     display: none;
 }
+
+.first_step > div {
+    height: 100%;
+}
+
+.popup-submit > span {
+    display: none;
+}
