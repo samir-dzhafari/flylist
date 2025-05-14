@@ -183,7 +183,7 @@ document.querySelectorAll('.select-box').forEach((box) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('req');
+  const form = document.getElementById('f13cf0f');
   if (form == null) {
     return
   }
@@ -243,7 +243,7 @@ let typingTimer; // Таймер для отслеживания окончан�
 const typingDelay = 400; // Задержка в 1000 мс (1 секунда)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('req');
+  const form = document.getElementById('f13cf0f');
   if (form == null) {
     return
   }
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitButton = document.querySelector('.popup-submit .button');
   const firstStep = document.querySelector('.first_step');
   const secondStep = document.querySelector('.second_step');
-  const form = document.getElementById('req');
+  const form = document.getElementById('f13cf0f');
 
   if (form == null) {
     return
