@@ -198,15 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let allFilled = true;
 
     inputs.forEach(input => {
-      if (input.tagName.toLowerCase() === 'input') {
-        if (!input.value.length) {
-          allFilled = false;
-        }
-      } else if (input.classList.contains('select-box')) {
-        const selectedOption = input.querySelector('.selected').textContent;
-        if (selectedOption === 'Выберете направление') {
-          allFilled = false;
-        }
+      if (!isValidFields(input)) {
+        allFilled = false
       }
     });
 
@@ -292,11 +285,27 @@ document.addEventListener('DOMContentLoaded', () => {
         option.addEventListener('click', handleInput);
       });
     }
-  });
-
-  // Выполняем начальную проверку при загрузке страницы
-  checkFormCompletion();
+  })
 });
+
+// Функция для проверки полей
+function isValidFields(input) {
+  if (input.tagName.toLowerCase() === 'input') {
+    // Проверка инпутов
+    if (input.id === 'name') {
+      return input.value.trim().length > 1
+    } else if (input.id === 'phone') {
+      return isValidPhone(input.value)
+    } else if (input.id === 'email') {
+      return isValidEmail(input.value)
+    }
+  } else if (input.classList.contains('select-box')) {
+    // Проверка селектора
+    const selectBox = input;
+    const selectError = document.getElementById('select-error');
+    return selectBox.querySelector('.selected').textContent !== 'Выберете направление'
+  }
+}
 
 // Функция для проверки телефона
 function isValidPhone(phone) {
@@ -389,8 +398,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('wpcf7mailsent', function(event) {
+    if (form.checkValidity()) {
     firstStep.classList.add('hidden');
     secondStep.classList.remove('hidden');
+    }
   }, false);
 
   // Проверка кнопки "Отправить" (активация при валидности формы)
@@ -403,15 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = form.querySelectorAll('.textfield-standard input, .select-box');
 
     inputs.forEach(input => {
-      if (input.tagName.toLowerCase() === 'input') {
-        if (!input.value.length) {
-          allFilled = false;
-        }
-      } else if (input.classList.contains('select-box')) {
-        const selectedOption = input.querySelector('.selected').textContent;
-        if (selectedOption === 'Выберете направление') {
-          allFilled = false;
-        }
+      if (!isValidFields(input)) {
+        allFilled = false
       }
     });
 
