@@ -257,6 +257,7 @@
 }
 
 .author_tours-suggestions h3 {
+    font-size: clamp(14px, calc(1.43vw + 8.6px), 24px);
     -ms-grid-column: 1;
     -ms-grid-column-span: 7;
     grid-column: 1 / span 7;
@@ -354,6 +355,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    padding: 16px 58.5px;
 
 }
 
@@ -362,6 +364,10 @@
         -ms-flex-item-align: normal;
         -ms-grid-row-align: normal;
         align-self: normal;
+    }
+
+    .marketing-content a {
+        width: 100%;
     }
 }
 

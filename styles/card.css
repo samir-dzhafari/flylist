@@ -79,6 +79,8 @@
 .card-content-title {
     --line-height: 1.4;
     line-height: var(--line-height);
+    font-weight: 700;
+    font-size: clamp(18px, calc(1.95vw + 10.6px), 32px);
 }
 
 .card-content-descriptions {
