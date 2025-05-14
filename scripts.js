@@ -146,7 +146,7 @@ document.querySelectorAll('.select-box').forEach((box) => {
   const selected = box.querySelector('.selected');
   const options = box.querySelector('.options');
   const popupWindow = box.closest('.popup-window');
-  const hiddenSelect = box.querySelector('.hidden-select');
+  const hiddenSelect = box.querySelector('.hidden-select select');
 
   // Функция для вычисления максимальной высоты для меню
   function setMaxHeight() {
@@ -171,6 +171,7 @@ document.querySelectorAll('.select-box').forEach((box) => {
       box.classList.remove('open');
       box.dataset.value = value;
       hiddenSelect.value = value;
+      console.log(hiddenSelect.value)
     });
   });
 

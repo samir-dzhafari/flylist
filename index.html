@@ -597,14 +597,15 @@
                                 <li data-value="Корпоративная поездка">Корпоративная поездка</li>
                                 <li data-value="Пока думаю">Пока думаю</li>
                             </ul>
-                            <select class="hidden-select" name="direction">
-                                <option value="">Выберете направление</option>
-                                <option value="Авторский групповой тур">Авторский групповой тур</option>
-                                <option value="Эксклюзивный тур">Эксклюзивный тур</option>
-                                <option value="Готовый тур">Готовый тур</option>
-                                <option value="Корпоративная поездка">Корпоративная поездка</option>
-                                <option value="Пока думаю">Пока думаю</option>
-                            </select>
+                            <span class="hidden-select">
+                            <select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" id="direction"
+                                    aria-required="true" aria-invalid="false" name="your-direction"><option
+                                    value=""></option><option
+                                    value="Авторский групповой тур">Авторский групповой тур</option><option
+                                    value="Эксклюзивный тур">Эксклюзивный тур</option><option value="Готовый тур">Готовый тур</option><option
+                                    value="Корпоративная поездка">Корпоративная поездка</option><option
+                                    value="Пока думаю">Пока думаю</option></select>
+                                </span>
                         </div>
 
                         <div class="textfield-error-message" id="select-error">Не выбрано направление</div>
