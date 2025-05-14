@@ -171,7 +171,6 @@ document.querySelectorAll('.select-box').forEach((box) => {
       box.classList.remove('open');
       box.dataset.value = value;
       hiddenSelect.value = value;
-      console.log(hiddenSelect.value)
     });
   });
 
