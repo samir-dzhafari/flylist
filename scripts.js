@@ -114,32 +114,11 @@ slider?.addEventListener('mousemove', (e) => {
 
 const phoneInput = document.getElementById('phone');
 
-phoneInput?.addEventListener('input', (e) => {
-  let value = e.target.value.replace(/\D/g, '');
-
-  // Удаляем "8" в начале и заменяем на "7" (для РФ)
-  if (value.startsWith('8')) {
-    value = '7' + value.slice(1);
-  }
-
-  // Убедимся, что номер начинается с "7"
-  if (!value.startsWith('7')) {
-    value = '7' + value;
-  }
-
-  // Обрезаем до максимум 11 цифр (без кода страны)
-  value = value.slice(0, 11);
-
-  // Форматируем
-  let formatted = '+7';
-  if (value.length > 1) {
-    formatted += ' (' + value.slice(1, 4);
-  }
-  if (value.length >= 4) {
-    formatted += ') ' + value.slice(4, 11);
-  }
-
-  e.target.value = formatted;
+document.getElementById('phone').addEventListener('input', function (e) {
+  var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+  e.target.value = !x[1] ? ''
+    : x[1] == '7' || x[1] == '8' ? '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '')
+      : '+7' + (x[1] ? ' (' + x[1] : '') + (x[2] ? x[2] + ')' : '') + (x[3] ? ' ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
 });
 
 document.querySelectorAll('.select-box').forEach((box) => {
@@ -309,7 +288,7 @@ function isValidFields(input) {
 
 // Функция для проверки телефона
 function isValidPhone(phone) {
-  const regex = /^\+7 \(\d{3}\) \d{7}$/;
+  const regex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
   return regex.test(phone);
 }
 
