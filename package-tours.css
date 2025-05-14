@@ -59,6 +59,16 @@
     display: none;
 }
 
+.package_tours-filter > .button {
+    padding: 10px;
+    font-weight: 300;
+    font-family: var(--fm-base);
+}
+
+.package_tours-filter > .unactive {
+    background-color: var(--color-gray);
+}
+
 /* Карточки */
 
 .grid {
