@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form == null) {
     return
   }
-  const submitButton = document.getElementById('submit-button');
+  const submitButton = document.querySelector('.popup-submit .button');
   const inputs = form.querySelectorAll('input, .select-box');
 
   // Функция для проверки, все ли поля заполнены
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form == null) {
     return
   }
-  const submitButton = document.getElementById('submit-button');
+  const submitButton = document.querySelector('.popup-submit .button');
   const inputs = form.querySelectorAll('input, .select-box');
 
   // Функция для проверки, все ли поля заполнены
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('request-popup');
   const openButtons = document.querySelectorAll('.open-request-popup');
   const closeButtons = document.querySelectorAll('.close-request-popup');
-  const submitButton = document.getElementById('submit-button');
+  const submitButton = document.querySelector('.popup-submit .button');
   const firstStep = document.querySelector('.first_step');
   const secondStep = document.querySelector('.second_step');
   const form = document.getElementById('req');
