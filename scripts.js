@@ -182,68 +182,11 @@ document.querySelectorAll('.select-box').forEach((box) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('f13cf0f');
-  if (form == null) {
-    return
-  }
-  const submitButton = document.querySelector('.popup-submit .button');
-  const inputs = form.querySelectorAll('input, .select-box');
-
-  // Функция для проверки, все ли поля заполнены
-  function checkFormCompletion() {
-    let allFilled = true;
-
-    inputs.forEach(input => {
-      if (input.tagName.toLowerCase() === 'input') {
-        if (!input.value.length) {
-          allFilled = false;
-        }
-      } else if (input.classList.contains('select-box')) {
-        const selectedOption = input.querySelector('.selected').textContent;
-        if (selectedOption === 'Выберете направление') {
-          allFilled = false;
-        }
-      }
-    });
-
-    // Включаем или отключаем кнопку в зависимости от заполненности формы
-    if (allFilled) {
-      submitButton.classList.remove('unactive');
-      submitButton.removeAttribute('disabled');
-      submitButton.classList.add('primary');
-    } else {
-      submitButton.classList.add('unactive');
-      submitButton.classList.remove('primary');
-      submitButton.setAttribute('disabled', true);
-    }
-  }
-
-  // Проверяем форму при изменении значений
-  inputs.forEach(input => {
-    if (input.tagName.toLowerCase() === 'input') {
-      input.addEventListener('input', checkFormCompletion);
-    } else if (input.classList.contains('select-box')) {
-      const options = input.querySelectorAll('.options li');
-      options.forEach(option => {
-        option.addEventListener('click', checkFormCompletion);
-      });
-    }
-  });
-
-  // Выполняем начальную проверку при загрузке страницы
-  checkFormCompletion();
-});
-
-
-
-
-
 let typingTimer; // Таймер для отслеживания окончания ввода
 const typingDelay = 400; // Задержка в 1000 мс (1 секунда)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('f13cf0f');
+  const form = document.querySelector('.req');
   if (form == null) {
     return
   }
@@ -412,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitButton = document.querySelector('.popup-submit .button');
   const firstStep = document.querySelector('.first_step');
   const secondStep = document.querySelector('.second_step');
-  const form = document.getElementById('f13cf0f');
+  const form = document.querySelector(".req");
 
   if (form == null) {
     return
