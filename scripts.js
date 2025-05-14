@@ -388,20 +388,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Переход на второй шаг после отправки формы
-  form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Предотвращаем стандартную отправку формы
-
-    // Если форма валидна
-    if (form.checkValidity()) {
-      // Переход на второй шаг
-      firstStep.classList.add('hidden');
-      secondStep.classList.remove('hidden');
-
-      // Очистка формы (если нужно)
-      form.reset();
-    }
-  });
+  document.addEventListener('wpcf7mailsent', function(event) {
+    firstStep.classList.add('hidden');
+    secondStep.classList.remove('hidden');
+  }, false);
 
   // Проверка кнопки "Отправить" (активация при валидности формы)
   form.addEventListener('input', checkFormCompletion);
