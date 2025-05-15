@@ -85,6 +85,7 @@
     -ms-flex-direction: column;
     flex-direction: column;
     gap: clamp(42px, calc(0.47vw + 40.3px), 48px);
+    margin-bottom: 42px;
 }
 
 .author-tour-info {

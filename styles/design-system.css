@@ -59,6 +59,13 @@ html, body {
     padding: 0 20px;
 }
 
+.container-left-fixed {
+    width: calc(100% - ((100% - 1330px) / 2));
+    max-width: 100%;
+    margin: 0 0 0 auto;
+    padding: 0 0 0 20px;
+}
+
 /* Заголовки */
 
 h1, h2, h3, h4, h5, h6 {
@@ -469,10 +476,11 @@ button {
 }
 
 .content-section-title-next {
-
+    color: var(--color-accent);
+    background-color: var(--color-beige) !important;
 }
 
-.content-section-title-next img {
+.content-section-title-next svg {
     width: clamp(12px, 1.5849vw + 6px, 28.8px);
     height: clamp(9.33px, 1.2264vw + 4.6667px, 22.4px);
 }

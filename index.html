@@ -113,20 +113,54 @@
 
     <!--  Авторские туры  -->
 
-    <section id="author_tours" class="author_tours content-section container">
-        <div class="content-section-title-wrapper">
+    <section id="author_tours" class="author_tours content-section">
+        <div class="content-section-title-wrapper container">
             <h2 class="content-section-title">
                 Авторские туры
             </h2>
             <a href="author-tours.html" class="content-section-title-next icon-square-button gray">
-                <img src="icons/next.svg" alt="Перейти в раздел">
+                <svg width="30" height="23" viewBox="0 0 30 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.3701 0.516987C18.6754 0.218813 19.1595 0.229347 19.4512 0.541401L29.1885 10.9603C29.4706 11.2624 29.4707 11.7384 29.1885 12.0404L19.4512 22.4584C19.1595 22.7704 18.6754 22.7818 18.3701 22.4838C18.0648 22.1856 18.054 21.6904 18.3457 21.3783L26.8477 12.2816L1.36426 12.2816C0.942248 12.2815 0.599779 11.9318 0.599609 11.5004C0.599609 11.0688 0.942144 10.7183 1.36426 10.7182L26.8477 10.7182L18.3457 1.62148C18.0541 1.30944 18.065 0.815192 18.3701 0.516987Z" fill="#B7B7B7"/>
+                </svg>
             </a>
         </div>
-        <h3 class="author_tours-subtitle content-section-subtitle">
+        <h3 class="author_tours-subtitle content-section-subtitle container">
             Готовый маршрут по интересным незаезженным тропам
         </h3>
-        <div class="author_tours-carousel content-section-carousel swiper author_tours_swiper">
+        <div class="author_tours-carousel content-section-carousel swiper author_tours_swiper container-left-fixed">
             <div class="swiper-wrapper">
+                <a class="author_tours-card card swiper-slide" href="details.html">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_1.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card-badge">
+                            <div class="card-badge-item">с 19 по 21 сентября 2025</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-content-title">Формула-1 Гран-при</h3>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Не упустите возможности побывать на легендарных гонках, погрузиться в мир скорости и драйва,
+                            и увидеть лучших гонщиков планеты!
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
+                <a class="author_tours-card card swiper-slide" href="details.html">
+                    <div class="author_tours-card-image card-image">
+                        <img src="./images/authorTours/image_1.jpg" alt="Формула 1 Азербайджан">
+                        <div class="card-badge">
+                            <div class="card-badge-item">с 19 по 21 сентября 2025</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-content-title">Формула-1 Гран-при</h3>
+                        <p class="author_tours-descriptions card-content-descriptions">
+                            Не упустите возможности побывать на легендарных гонках, погрузиться в мир скорости и драйва,
+                            и увидеть лучших гонщиков планеты!
+                        </p>
+                        <span class="card-content-link">Подробнее</span>
+                    </div>
+                </a>
                 <a class="author_tours-card card swiper-slide" href="details.html">
                     <div class="author_tours-card-image card-image">
                         <img src="./images/authorTours/image_1.jpg" alt="Формула 1 Азербайджан">
@@ -205,9 +239,9 @@
             <div class="author_tours-swiper-pagination swiper-pagination"></div>
         </div>
 
-        <div class="author_tours-suggestions">
+        <div class="author_tours-suggestions container">
             <h3>Хотите получить авторский тур, собранный по вашим предпочтениям?</h3>
-            <button type="button" class="button secondary open-request-popup">
+            <button type="button" data-value="Авторский групповой тур" class="button secondary open-request-popup">
                 Узнать подробнее
             </button>
         </div>
@@ -237,8 +271,8 @@
 
     <!-- Готовые  -->
 
-    <section id="package_tours" class="package_tours content-section container">
-        <div class="content-section-title-wrapper">
+    <section id="package_tours" class="package_tours content-section">
+        <div class="content-section-title-wrapper container">
             <h2 class="content-section-title">
                 Готовые туры
             </h2>
@@ -246,17 +280,17 @@
                 <img src="icons/next.svg" alt="Перейти в раздел">
             </a>
         </div>
-        <h3 class="package_tours-subtitle content-section-subtitle">
+        <h3 class="package_tours-subtitle content-section-subtitle container">
             В цену включены перелёт, проживание, трансфер и медицинская страховка
         </h3>
 
-        <div class="package_tours-filter">
+        <div class="package_tours-filter container-left-fixed">
             <button class="button primary" data-filter="all">Все туры</button>
             <button class="button unactive" data-filter="turkey">Турция</button>
             <button class="button unactive" data-filter="asd">asd</button>
         </div>
 
-        <div class="package_tours-carousel content-section-carousel swiper package_tours_swiper">
+        <div class="package_tours-carousel content-section-carousel swiper package_tours_swiper container-left-fixed">
             <div class="swiper-wrapper">
                 <a class="package_tours-card card swiper-slide" data-country="turkey" href="details.html">
                     <div class="package_tours-card-image card-image">
@@ -363,7 +397,7 @@
                                 Разрабатываем уникальные маршруты, учитывая все ваши пожелания и предпочтения
                             </div>
                         </div>
-                        <button type="button" class="button primary open-request-popup">
+                        <button type="button" data-value="Эксклюзивный тур" class="button primary open-request-popup">
                             Собрать путешествие
                         </button>
 
@@ -387,7 +421,7 @@
                                 ярмарках
                             </div>
                         </div>
-                        <button type="button" class="button primary open-request-popup">
+                        <button type="button" data-value="Корпоративная поездка" class="button primary open-request-popup">
                             Оставить заявку
                         </button>
                     </div>
@@ -599,7 +633,8 @@
                                 </ul>
                                 <span class="hidden-select">
                             <select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" id="direction"
-                                    aria-required="true" aria-invalid="false" name="your-direction"><option
+                                    aria-required="true" aria-invalid="false" name="your-direction">
+                                <option
                                     value=""></option><option
                                     value="Авторский групповой тур">Авторский групповой тур</option><option
                                     value="Эксклюзивный тур">Эксклюзивный тур</option><option value="Готовый тур">Готовый тур</option><option

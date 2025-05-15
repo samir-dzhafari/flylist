@@ -4,7 +4,17 @@
 
 /* Якори */
 
-#top, #author_tours, #package_tours, #exclusive_offers, #feedback {
+#exclusive_offers {
+    scroll-margin-top: 498px;
+}
+
+@media (max-width: 420px) {
+    #exclusive_offers {
+        scroll-margin-top: 68px;
+    }
+}
+
+#package_tours, #feedback {
     scroll-margin-top: 68px;
 }
 
@@ -80,6 +90,7 @@
 
 .top_content-button.bottom {
     display: none;
+    width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -199,11 +210,28 @@
 }
 
 .author_tours-carousel {
+
 }
 
 .author_tours-carousel .swiper-slide {
-    max-width: 360px;
     width: 100%;
+    max-width: 360px;
+}
+
+.author_tours-carousel .swiper-slide:last-child {
+    margin-right: 20px;
+}
+
+@media (max-width: 1440px) and (min-width: 380px) {
+    .author_tours-carousel .swiper-slide {
+        max-width: calc(207px + (100vw - 380px) * ((360 - 207) / (1440 - 380)));
+    }
+}
+
+@media (max-width: 380px) {
+    .author_tours-carousel .swiper-slide {
+        max-width: 207px;
+    }
 }
 
 .author_tours-carousel .swiper-wrapper {
@@ -213,7 +241,7 @@
 }
 
 .author_tours-card {
-
+    display: flex;
 }
 
 .author_tours-card-image {
@@ -492,12 +520,24 @@
 }
 
 .package_tours-carousel .swiper-slide {
-    max-width: 410px;
     width: 100%;
+    max-width: 410px;
+}
+
+@media (max-width: 1440px) and (min-width: 380px) {
+    .package_tours-carousel .swiper-slide {
+        max-width: calc(320px + (100vw - 380px) * 0.0849);
+    }
+}
+
+@media (max-width: 380px) {
+    .package_tours-carousel .swiper-slide {
+        max-width: 320px;
+    }
 }
 
 .package_tours-card {
-    display: block;
+    display: flex;
 }
 
 .package_tours-card {
@@ -792,18 +832,24 @@
 /* Отзывы клиентов */
 
 .feedback {
+    position: relative;
     width: 100%;
+    overflow: hidden;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/feedback/background.jpg");
+    background-repeat: no-repeat;
     background-size: 141%;
     background-position: 0% 85%;
-
-    @media (max-width: 1140px) {
-        background-size: cover;
-        background-position: center center;
-    };
-
+    background-attachment: scroll;
+    background-origin: border-box;
     padding-top: 75px;
     padding-bottom: 75px;
+}
+
+@media (max-width: 1140px) {
+    .feedback {
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 .feedback-wrapper {

@@ -142,7 +142,7 @@
             </p>
         </article>
 
-        <button type="button" class="button primary open-request-popup">
+        <button type="button" data-value="Готовый тур" class="button primary open-request-popup">
             Оставить заявку
         </button>
 
@@ -192,53 +192,68 @@
 
             <h2 class="popup-title">Заявка на консультацию</h2>
 
-            <div class="popup-content">
-                <form id="req" class="popup-form">
-                    <div class="textfield-standard">
-                        <input type="text" id="name" placeholder="Ваше имя" required/>
-                        <div class="underline"></div>
-                        <div class="textfield-error-message" id="name-error">Не введено имя</div>
-                    </div>
-
-                    <div class="textfield-standard">
-                        <input type="tel" id="phone" placeholder="Номер телефона" required maxlength="17"/>
-                        <div class="underline"></div>
-                        <div class="textfield-error-message" id="phone-error">Не корректный номер телефона</div>
-                    </div>
-
-                    <div class="textfield-standard">
-                        <input type="email" id="email" placeholder="Email" required/>
-                        <div class="underline"></div>
-                        <div class="textfield-error-message" id="email-error">Не корректная почта</div>
-                    </div>
-
-                    <div class="custom-select-standard">
-                        <div class="select-box">
-                            <div class="selected">Выберете направление</div>
-                            <img class="arrow-icon" src="icons/arrowDown.svg" alt="arrow" width="24" height="24">
-                            <span class="underline"></span>
-                            <ul class="options">
-                                <li data-value="Авторский групповой тур">Авторский групповой тур</li>
-                                <li data-value="Эксклюзивный тур">Эксклюзивный тур</li>
-                                <li data-value="Готовый тур">Готовый тур</li>
-                                <li data-value="Корпоративная поездка">Корпоративная поездка</li>
-                                <li data-value="Пока думаю">Пока думаю</li>
-                            </ul>
+            <form id="f13cf0f" class="popup-form req">
+                <div class="popup-content">
+                    <div class="popup-content-form">
+                        <div class="textfield-standard">
+                            <input type="text" id="name" placeholder="Ваше имя" required/>
+                            <div class="underline"></div>
+                            <div class="textfield-error-message" id="name-error">Не введено имя</div>
                         </div>
-                        <div class="textfield-error-message" id="select-error">Не выбрано направление</div>
+
+                        <div class="textfield-standard">
+                            <input type="tel" id="phone" placeholder="Номер телефона" required maxlength="18"/>
+                            <div class="underline"></div>
+                            <div class="textfield-error-message" id="phone-error">Не корректный номер телефона</div>
+                        </div>
+
+                        <div class="textfield-standard">
+                            <input type="email" id="email" placeholder="Email" required/>
+                            <div class="underline"></div>
+                            <div class="textfield-error-message" id="email-error">Не корректная почта</div>
+                        </div>
+
+                        <div class="custom-select-standard">
+                            <div class="select-box">
+                                <div class="selected">Выберете направление</div>
+                                <img class="arrow-icon" src="icons/arrowDown.svg" alt="arrow" width="24" height="24">
+                                <span class="underline"></span>
+                                <ul class="options">
+                                    <li data-value="Авторский групповой тур">Авторский групповой тур</li>
+                                    <li data-value="Эксклюзивный тур">Эксклюзивный тур</li>
+                                    <li data-value="Готовый тур">Готовый тур</li>
+                                    <li data-value="Корпоративная поездка">Корпоративная поездка</li>
+                                    <li data-value="Пока думаю">Пока думаю</li>
+                                </ul>
+                                <span class="hidden-select">
+                            <select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" id="direction"
+                                    aria-required="true" aria-invalid="false" name="your-direction">
+                                <option
+                                        value=""></option><option
+                                    value="Авторский групповой тур">Авторский групповой тур</option><option
+                                    value="Эксклюзивный тур">Эксклюзивный тур</option><option value="Готовый тур">Готовый тур</option><option
+                                    value="Корпоративная поездка">Корпоративная поездка</option><option
+                                    value="Пока думаю">Пока думаю</option></select>
+                                </span>
+                            </div>
+
+                            <div class="textfield-error-message" id="select-error">Не выбрано направление</div>
+                        </div>
                     </div>
+                    <div class="popup-submit">
+                        <input class="wpcf7-form-control wpcf7-submit has-spinner button" type="submit"
+                               value="Отправить">
 
-                </form>
-
-                <div class="popup-submit">
-                    <button type="submit" form="req" class="button unactive" id="submit-button" disabled>Отправить
-                    </button>
-
-                    <p class="popup-submit-disclaimer">
-                        Нажимая кнопку “Отправить” вы соглашаетесь с политикой конфиденциальности
-                    </p>
+                        <p class="popup-submit-disclaimer">
+                            Нажимая кнопку “Отправить” вы соглашаетесь с политикой конфиденциальности
+                        </p>
+                    </div>
                 </div>
-            </div>
+
+
+            </form>
+
+
         </div>
         <div class="popup-wrapper second_step hidden">
             <button class="popup-close button icon-button close-request-popup" aria-label="Закрыть">

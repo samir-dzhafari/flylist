@@ -1,5 +1,5 @@
 var authorToursSwiper = new Swiper(".author_tours_swiper", {
-  slidesPerView: 1.5,
+  slidesPerView: "auto",
   spaceBetween: 8,
   freeMode: true,
   pagination: {
@@ -9,22 +9,25 @@ var authorToursSwiper = new Swiper(".author_tours_swiper", {
   },
   breakpoints: {
     450: {
-      slidesPerView: 1.7,
+      // slidesPerView: 1.7,
       spaceBetween: 12
     },
     768: {
-      slidesPerView: 2,
+      // slidesPerView: 2,
       spaceBetween: 12
     },
     1024: {
-      slidesPerView: 3,
+      // slidesPerView: 3,
       spaceBetween: 16
     }
-  }
+  },
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true
 });
 
 var packageToursSwiper = new Swiper(".package_tours_swiper", {
-  slidesPerView: 1,
+  slidesPerView: "auto",
   spaceBetween: 8,
   freeMode: true,
   pagination: {
@@ -34,15 +37,15 @@ var packageToursSwiper = new Swiper(".package_tours_swiper", {
   },
   breakpoints: {
     450: {
-      slidesPerView: 1.5,
+      // slidesPerView: 1.5,
       spaceBetween: 12,
     },
     768: {
-      slidesPerView: 2,
+      // slidesPerView: 2,
       spaceBetween: 12,
     },
     1024: {
-      slidesPerView: 3,
+      // slidesPerView: 3,
       spaceBetween: 16,
     }
   },
