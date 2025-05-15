@@ -2,6 +2,12 @@
 
 @import url("./styles/design-system.css");
 
+/* Якори */
+
+#top, #author_tours, #package_tours, #exclusive_offers, #feedback {
+    scroll-margin-top: 68px;
+}
+
 /* Стартовая секция */
 
 .start_page {
@@ -483,6 +489,11 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+}
+
+.package_tours-carousel .swiper-slide {
+    max-width: 410px;
+    width: 100%;
 }
 
 .package_tours-card {
