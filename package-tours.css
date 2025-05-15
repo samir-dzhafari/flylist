@@ -93,6 +93,12 @@
     margin-bottom: 42px;
 }
 
+@media (max-width: 500px) {
+    .content-section-title {
+        display: none;
+    }
+}
+
 .package_tours-card {
     position: relative;
     grid-column: auto;

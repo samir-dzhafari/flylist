@@ -49,6 +49,12 @@
     margin-bottom: 42px;
 }
 
+@media (max-width: 500px) {
+    .content-section-title {
+        display: none;
+    }
+}
+
 .package_tours-card-image img {
     width: 100%;
     aspect-ratio: calc(410 / 242);
