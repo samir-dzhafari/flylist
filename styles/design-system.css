@@ -577,11 +577,11 @@ button {
     align-items: center;
 }
 
-.address span:nth-of-type(2) {
+.address .current {
     color: var(--color-black);
 }
 
-.address img:nth-of-type(1) {
+.address .back {
     display: none;
     width: 20px;
 }
@@ -595,15 +595,15 @@ button {
         color: var(--color-black);
     }
 
-    .address img:nth-of-type(1) {
+    .address .back {
         display: block;
     }
 
-    .address img:nth-of-type(2) {
+    .address .arrow_right {
         display: none;
     }
 
-    .address span:nth-of-type(1) {
+    .address .main {
         display: none;
     }
 }
