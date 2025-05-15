@@ -287,6 +287,18 @@ button {
     }
 }
 
+.menu-icon-close {
+    display: none;
+}
+
+.header.open .menu-icon-burger {
+    display: none;
+}
+
+.header.open .menu-icon-close {
+    display: inline;
+}
+
 .header-menu-list {
     display: -webkit-box;
     display: -ms-flexbox;
