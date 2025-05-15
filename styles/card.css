@@ -3,11 +3,11 @@
     -webkit-box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 5px 19.6px 0 rgba(0, 0, 0, 0.12);
 
-    display: -webkit-box !important;
+    display: -webkit-box;
 
-    display: -ms-flexbox !important;
+    display: -ms-flexbox;
 
-    display: flex !important;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
