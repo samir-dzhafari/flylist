@@ -90,9 +90,16 @@ document.addEventListener('DOMContentLoaded', function () {
           slide.style.display = 'block';
         });
       } else {
-        document.querySelectorAll(`.package_tours-card[data-country="${filterValue}"]`).forEach(slide => {
-          slide.style.display = 'block';
-        });
+        document
+          .querySelectorAll(`.package_tours-card[data-country="all"]`)
+          .forEach(slide => {
+            slide.style.display = 'block';
+          });
+        document
+          .querySelectorAll(`.package_tours-card[data-country="${filterValue}"]`)
+          .forEach(slide => {
+            slide.style.display = 'block';
+          });
       }
 
       // Обновляем Swiper с задержкой для корректного расчета

@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Фильтрация
       cards.forEach(card => {
+        if (card.getAttribute('data-country') === "all") {
+          return card.style.display = 'block';
+        }
         if (filterValue === 'all' || card.getAttribute('data-country') === filterValue) {
           card.style.display = 'block'; // или 'flex' в зависимости от вашей структуры
         } else {
