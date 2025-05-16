@@ -90,18 +90,18 @@ document.addEventListener('DOMContentLoaded', function () {
       // Показываем нужные слайды
       if (filterValue === 'all') {
         slides.forEach(slide => {
-          slide.style.display = 'block';
+          slide.style.display = 'flex';
         });
       } else {
         document
           .querySelectorAll(`.package_tours-card[data-country="all"]`)
           .forEach(slide => {
-            slide.style.display = 'block';
+            slide.style.display = 'flex';
           });
         document
           .querySelectorAll(`.package_tours-card[data-country="${filterValue}"]`)
           .forEach(slide => {
-            slide.style.display = 'block';
+            slide.style.display = 'flex';
           });
       }
 

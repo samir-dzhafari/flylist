@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // Фильтрация
       cards.forEach(card => {
         if (card.getAttribute('data-country') === "all") {
-          return card.style.display = 'block';
+          return card.style.display = 'flex';
         }
         if (filterValue === 'all' || card.getAttribute('data-country') === filterValue) {
-          card.style.display = 'block'; // или 'flex' в зависимости от вашей структуры
+          card.style.display = 'flex'; // или 'flex' в зависимости от вашей структуры
         } else {
           card.style.display = 'none';
         }
