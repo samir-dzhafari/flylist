@@ -407,3 +407,7 @@
 .popup-submit > span {
     display: none;
 }
+
+.wpcf7-spinner, .wpcf7-response-output {
+    display: none !important;
+}
