@@ -1,0 +1,979 @@
+/* Дизайн система */
+
+@import url("./styles/design-system.css");
+
+/* Якори */
+
+#exclusive_offers {
+    scroll-margin-top: 498px;
+}
+
+@media (max-width: 420px) {
+    #exclusive_offers {
+        scroll-margin-top: 68px;
+    }
+}
+
+#package_tours, #feedback {
+    scroll-margin-top: 68px;
+}
+
+/* Стартовая секция */
+
+.start_page {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/header/header-background.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 85%;
+    background-size: 141%;
+    background-attachment: scroll;
+    background-origin: border-box;
+}
+
+@media (max-width: 1140px) {
+    .start_page {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Топ контент */
+
+.top_content {
+    padding-top: 68px;
+    margin-top: clamp(42px, calc(6.33vw + 14px), 80px);
+    margin-bottom: clamp(42px, calc(6.33vw + 14px), 80px);
+}
+
+.top_content-title {
+    color: var(--color-ligth);
+    margin-bottom: 16px;
+}
+
+@media (min-width: 600px) {
+    .top_content-title {
+        margin-bottom: 22px;
+    }
+}
+
+@media (min-width: 900px) {
+    .top_content-title {
+        margin-bottom: 28px;
+    }
+}
+
+.top_content-subtitle {
+    color: var(--color-ligth);
+}
+
+.top_content-button {
+    margin: 46px 0;
+}
+
+@media (max-width: 600px) {
+    .top_content-button {
+        margin: 42px 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .top_content-button {
+        margin-bottom: 44px;
+    }
+}
+
+.top_content-button.top {
+    display: block;
+}
+
+.top_content-button.bottom {
+    display: none;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .top_content-button.top {
+        display: none;
+    }
+
+    .top_content-button.bottom {
+        display: block;
+    }
+}
+
+.top_content-suggestions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+@media (min-width: 600px) {
+    .top_content-suggestions {
+        gap: calc(42px / 1.5);
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .top_content-suggestions {
+        gap: 42px;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+.top_content-suggestion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media (min-width: 600px) {
+    .top_content-suggestion {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .top_content-suggestion {
+        gap: 20px;
+    }
+}
+
+.top_content-suggestion-title, .top_content-suggestion-description {
+    color: var(--color-ligth);
+}
+
+.top_content-suggestion-title {
+
+}
+
+.top_content-suggestion-description {
+
+}
+
+.top_content-contacts {
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .top_content-contacts {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+.top_content-contacts img {
+    height: 32px;
+}
+
+.top_content-contacts a {
+    color: var(--color-ligth);
+}
+
+/* Авторские туры */
+
+.author_tours {
+
+}
+
+.author_tours-title {
+
+}
+
+.author_tours-subtitle {
+
+}
+
+.author_tours-carousel {
+
+}
+
+.author_tours-carousel .swiper-slide {
+    width: 100%;
+    max-width: 360px;
+}
+
+.author_tours-carousel .swiper-slide:last-child {
+    margin-right: 20px;
+}
+
+@media (max-width: 1440px) and (min-width: 380px) {
+    .author_tours-carousel .swiper-slide {
+        max-width: calc(207px + (100vw - 380px) * ((360 - 207) / (1440 - 380)));
+    }
+}
+
+@media (max-width: 380px) {
+    .author_tours-carousel .swiper-slide {
+        max-width: 207px;
+    }
+}
+
+.author_tours-carousel .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.author_tours-card {
+    display: flex;
+}
+
+.author_tours-card-image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.author_tours-card-image img {
+    width: 100%;
+    aspect-ratio: calc(410 / 493);
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+
+.author_tours-card .card-content-title {
+    font-size: clamp(var(--fs-sm-max), 2vw + 10px, var(--fs-lg));
+}
+
+.author_tours-descriptions {
+    --line-height: 1.4;
+
+    margin-top: auto;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(3em * var(--line-height));
+}
+
+.author_tours-suggestions {
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 31px 36px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.author_tours-suggestions h3 {
+    font-size: clamp(14px, calc(1.43vw + 8.6px), 24px);
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / span 7;
+    margin: 0;
+}
+
+.author_tours-suggestions button {
+    -ms-grid-column: 10;
+    -ms-grid-column-span: 3;
+    grid-column: 10 / span 3;
+    margin-left: auto;
+    /*width: 100%;*/
+}
+
+@media (max-width: 1220px) {
+    .author_tours-suggestions h3 {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 8;
+        grid-column: 1 / span 8;
+    }
+
+    .author_tours-suggestions button {
+        -ms-grid-column: 9;
+        -ms-grid-column-span: 5;
+        grid-column: 9 / span 5;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 875px) {
+    .author_tours-suggestions {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .author_tours-suggestions h3 {
+        width: 100%;
+        line-height: 1.4;
+    }
+
+    .author_tours-suggestions button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Маркетинг */
+
+.marketing {
+    padding: 0
+}
+
+@media (max-width: 780px) {
+    .marketing-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 8px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.marketing-content {
+    padding: 80px 0;
+}
+
+@media (max-width: 780px) {
+    .marketing-content {
+        padding: 0;
+    }
+}
+
+.marketing-title {
+    font-size: clamp(24px, 1.698vw + 15.55px, 32px);
+}
+
+.marketing-subtitle {
+    font-size: clamp(var(--fs-xs), calc(1.25vw + 9px), var(--fs-md-max));
+    line-height: 1.2;
+}
+
+.marketing-content a {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 16px 58.5px;
+
+}
+
+@media (max-width: 780px) {
+    .marketing-content {
+        -ms-flex-item-align: normal;
+        -ms-grid-row-align: normal;
+        align-self: normal;
+    }
+
+    .marketing-content a {
+        width: 100%;
+    }
+}
+
+/*
+.marketing-wrapper .card_suggestion-image {
+    align-self: start;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1040px) {
+        padding: 20px 20px 0 20px;
+        max-height: 247px;
+        aspect-ratio: 1.185 / 1;
+    }
+
+    @media (max-width: 550px) {
+        padding: 20px 20px 0 20px;
+        max-width: 198px;
+        max-height: 167px;
+    }
+}
+*/
+
+.marketing-wrapper .card_suggestion-image {
+    margin-left: 40px;
+}
+
+@media (max-width: 780px) {
+    .marketing-wrapper .card_suggestion-image {
+        margin: 0;
+        -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    }
+}
+
+.marketing-image {
+    display: block;
+    aspect-ratio: calc(484 / 381);
+    min-width: clamp(316px, calc(316px + 168 * ((100vw - 810px) / 520)), 484px);
+}
+
+@media (max-width: 1040px) {
+    .marketing-image {
+        max-width: 258px;
+        min-width: 258px;
+    }
+}
+
+@media (max-width: 600px) {
+    .marketing-image {
+        max-width: 198px;
+        min-width: 198px;
+    }
+}
+
+
+/* Готовые */
+
+.package_tours {
+
+}
+
+.package_tours-subtitle {
+
+}
+
+.package_tours-filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: clamp(8px, calc(0.5vw + 6px), 15px);
+    margin-bottom: 20px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.package_tours-filter:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+/* Фильтр -> Скрытие скролла */
+
+.package_tours-filter {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.package_tours-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.package_tours-filter > .button {
+    padding: 10px;
+    font-weight: 300;
+    font-family: var(--fm-base);
+}
+
+.package_tours-filter > .unactive {
+    background-color: var(--color-gray);
+}
+
+.package_tours-carousel {
+
+}
+
+.package_tours-carousel .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.package_tours-carousel .swiper-slide {
+    width: 100%;
+    max-width: 410px;
+}
+
+@media (max-width: 1440px) and (min-width: 380px) {
+    .package_tours-carousel .swiper-slide {
+        max-width: calc(320px + (100vw - 380px) * 0.0849);
+    }
+}
+
+@media (max-width: 380px) {
+    .package_tours-carousel .swiper-slide {
+        max-width: 320px;
+    }
+}
+
+.package_tours-card {
+    display: flex;
+}
+
+.package_tours-card {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.package_tours-card[style*="display: none"] {
+    display: none !important;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+.package_tours-card-image {
+    /*height: clamp(118.79px, calc(20vw + 137px), 242px);*/
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.package_tours-card-image img {
+    width: 100%;
+    aspect-ratio: calc(410 / 242);
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+
+.package_tours-card .card-content-title {
+    font-size: clamp(var(--fs-sm), calc(1.33vw + 11.2px), var(--fs-lg));
+}
+
+.package_tours-descriptions {
+    --line-height: 1.4;
+
+    font-size: clamp(14px, calc(0.83vw + 11px), 20px);
+    margin-top: auto;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(2em * var(--line-height));
+}
+
+.package_tours-card.last .card-content-descriptions {
+    margin-top: 0;
+}
+
+.package_tours-card.last .card-content-title {
+    font-size: clamp(var(--fs-md-max), calc(2vw + 16px), var(--fs-xl));
+}
+
+.package_tours-card.last a {
+    margin-top: auto;
+    z-index: 2;
+}
+
+.package_tours-descriptions-loop {
+    position: absolute;
+    width: calc(100% / 1.75);
+    aspect-ratio: calc(235 / 224);
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+
+.package_tours-suggestions {
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 31px 36px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.package_tours-suggestions h3 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / span 7;
+    margin: 0;
+}
+
+.package_tours-suggestions button {
+    -ms-grid-column: 10;
+    -ms-grid-column-span: 3;
+    grid-column: 10 / span 3;
+    margin-left: auto;
+}
+
+@media (max-width: 1220px) {
+    .package_tours-suggestions h3 {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 8;
+        grid-column: 1 / span 8;
+    }
+
+    .package_tours-suggestions button {
+        -ms-grid-column: 9;
+        -ms-grid-column-span: 5;
+        grid-column: 9 / span 5;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 875px) {
+    .package_tours-suggestions {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .package_tours-suggestions h3 {
+        width: 100%;
+        line-height: 1.4;
+    }
+
+    .package_tours-suggestions button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Эксклюзивные предложения */
+
+.exclusive_offers {
+}
+
+.exclusive_offers-grid {
+    height: 100%;
+    gap: 0 !important;
+}
+
+@media (max-width: 1040px) {
+    .exclusive_offers-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 550px) {
+    .exclusive_offers-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+}
+
+.exclusive_offers-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+@media (max-width: 550px) {
+    .exclusive_offers-content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.exclusive_offers-card {
+    padding: 0;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.exclusive_offers-card-content {
+    padding: 20px;
+    gap: 28px;
+}
+
+@media (max-width: 1040px) {
+    .exclusive_offers-card-content {
+        padding-top: 0;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .exclusive_offers-card-content {
+        -webkit-box-align: normal;
+        -ms-flex-align: normal;
+        align-items: normal;
+    }
+}
+
+.exclusive_offers-card-content-wrapper {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 550px) {
+    .exclusive_offers-card-content-wrapper {
+        gap: 12px;
+    }
+}
+
+.exclusive_offers-card-title {
+    font-size: clamp(24px, 1.698vw + 15.55px, 32px);
+}
+
+.exclusive_offers-card-title,
+.exclusive_offers-card-subtitle {
+    line-height: 1.4;
+}
+
+.exclusive_offers-grid .card_suggestion-image {
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (max-width: 1040px) {
+    .exclusive_offers-grid .card_suggestion-image {
+        padding: 20px 20px 0 20px;
+        max-height: 227px;
+        aspect-ratio: 1.01 / 1;
+    }
+}
+
+@media (max-width: 550px) {
+    .exclusive_offers-grid .card_suggestion-image {
+        padding: 20px 20px 0 20px;
+        max-width: 167px;
+        max-height: 169px;
+    }
+}
+
+.exclusive_offers-image {
+}
+
+
+/* Отзывы клиентов */
+
+.feedback {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/feedback/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 141%;
+    background-position: 0% 85%;
+    background-attachment: scroll;
+    background-origin: border-box;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+@media (max-width: 1140px) {
+    .feedback {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.feedback-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: clamp(16px, calc(1.04vw + 11px), 30px);
+}
+
+.feedback-card {
+    display: flex !important;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: auto;
+    padding: 18px 31px;
+    min-width: 320px;
+    max-width: 320px;
+    cursor: inherit;
+}
+
+.feedback-card.swiper-slide {
+    width: 320px !important; /* фиксируем ширину каждого слайда */
+    flex-shrink: 0; /* отключаем сжатие */
+}
+
+.feedback-card .card-content {
+    margin: 0;
+}
+
+.feedback-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 30px;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.feedback-wrapper:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+/* Скрытие скролла */
+
+.feedback-wrapper {
+    /*scrollbar-width: none;*/
+    /*-ms-overflow-style: none;*/
+}
+
+.feedback-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.feedback-title {
+    color: var(--color-ligth);
+    margin: 0;
+}
+
+.feedback-carousel {
+
+}
+
+.feedback-carousel .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.feedback-card {
+
+    display: block;
+}
+
+.feedback-card-title {
+    font-family: var(--fm-base);
+    font-weight: 300;
+}
+
+.feedback-card-descriptions {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: var(--fs-xs);
+}
+
+.feedback-rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 19px;
+}
+
+.feedback-rating-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.feedback-rating-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.feedback-rating-info-person {
+    font-size: 14px;
+}
