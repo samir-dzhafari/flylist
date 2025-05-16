@@ -238,9 +238,7 @@ button {
 }
 
 .header-menu-logos {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     gap: min(64px, 2.5vw);
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -249,6 +247,9 @@ button {
 
 @media (max-width: 855px) {
     .header-menu-logos {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         gap: 21px;
     }
 }
@@ -282,10 +283,12 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-radius: 20px;
+    border-radius: 50%;
 
-    width: clamp(32px, calc(5.6vw + 6.4px), 48px);
-    height: clamp(32px, calc(5.6vw + 6.4px), 48px);
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    width: 32px;
+    height: 32px;
 }
 
 @media (min-width: 856px) {
@@ -313,27 +316,29 @@ button {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: min(64px, 2.5vw);
+
     /*column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 880px) / (1290 - 880))), 53px);*/
 
     font-size: clamp(var(--fs-xs), 1.2vw, var(--fs-sm));
 
     list-style-type: none;
 
-    -webkit-box-pack: right;
+    width: 100%;
 
-    -ms-flex-pack: right;
+    -webkit-box-pack: space-between;
 
-    justify-content: right;
+    -ms-flex-pack: space-between;
+
+    justify-content: space-between;
 }
 
-@media (min-width: 855px) {
-    .header-menu-list {
-        -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-        justify-content: initial;
-    }
-}
+/*@media (min-width: 855px) {*/
+/*    .header-menu-list {*/
+/*        -webkit-box-pack: initial;*/
+/*        -ms-flex-pack: initial;*/
+/*        justify-content: initial;*/
+/*    }*/
+/*}*/
 
 .header-menu-item {
     display: -webkit-box;
@@ -354,6 +359,10 @@ button {
 
     .header-menu-item {
         display: none;
+    }
+
+    .logo {
+        display: none !important;
     }
 }
 
@@ -423,14 +432,9 @@ button {
 
 /* Показываем все пункты меню */
 .header.open .header-menu-item {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-}
-
-/* Скрыть логотип в открытом меню (если нужно) */
-.header.open .header-menu-item:first-child {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 /* Контент */

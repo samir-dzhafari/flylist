@@ -8,14 +8,22 @@
     scroll-margin-top: 498px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 2000px) {
     #exclusive_offers {
         scroll-margin-top: 68px;
     }
 }
 
+#top {
+    scroll-margin-top: 68px;
+}
+
 #package_tours, #feedback {
     scroll-margin-top: 68px;
+}
+
+#author_tours {
+    scroll-margin-bottom: 168px;
 }
 
 /* Стартовая секция */
